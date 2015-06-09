@@ -3,7 +3,7 @@
 /**
  * 
  */
-class Cliente extends CI_Controller {
+class Docente extends CI_Controller {
 	
 	public function __construct() {
 		parent::__construct();
@@ -15,10 +15,10 @@ class Cliente extends CI_Controller {
 		{
 			redirect(base_url().'login');
 		}
-		$data['titulo']             =   'Bienvenido Cliente';
-		$data['viewControlador']	=	'rolCliente';
-		$data['viewNave']	        =   'rolCliente';
-	    $data['nave']	     		=	'navcliente';
+		$data['titulo']             =   'Bienvenido Docente';
+		$data['viewControlador']	=	'rolDocente';
+		$data['viewNave']	        =   'rolDocente';
+	    $data['nave']	     		=	'navDocente';
 		$data['contenido']			=	'index';
 		$this->load->view('masterPage/masterPage', $data);
 	}

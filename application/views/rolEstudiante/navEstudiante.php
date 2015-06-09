@@ -10,8 +10,8 @@
                        
                     </div>
                      <?php 
-                              $nav='navVendedor';
-                              $folder_nav='rolVendedor';
+                              $nav='navEstudiante';
+                              $folder_nav='rolEstudiante';
                     ?>
 
                     <div id="navbarCollapse" class="collapse navbar-collapse nav-justified">
