@@ -30,11 +30,11 @@ class Login extends CI_Controller
 			case 'Administrador':
 				redirect(base_url().'admin');
 				break;
-			case 'Vendedor':
-				redirect(base_url().'vendedor');
+			case 'Estudiante':
+				redirect(base_url().'estudiante');
 				break;	
-			case 'Cliente':
-				redirect(base_url().'cliente');
+			case 'Docente':
+				redirect(base_url().'docente');
 				break;
 			default:		
 				        $data['titulo']				= 	'Inicio Session';

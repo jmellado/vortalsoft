@@ -14,7 +14,7 @@
 | path to your installation.           http://www.appventas.hol.es/
 |
 */
-$config['base_url']	= 'http://localhost:80/ventasoft/';
+$config['base_url']	= 'http://localhost:80/vortalsoft/';
 
 /*
 |--------------------------------------------------------------------------
