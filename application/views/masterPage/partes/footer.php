@@ -13,7 +13,12 @@
                         <hr>
                         <div class="column-main">
                              <p>
-                                   <bdi>&copy; Copyright Derechos Reservados  2015 Sistemas Integrados de Software SIS <br /><a href="##">Licencia</a> &middot; <a href="##">Ayuda</a> &middot; <a href="##">Terminos  y condiciones</a> &middot; <a href="##">Privacidad</a></bdi>
+                                   <bdi>&copy; Copyright Derechos Reservados  2015 Sistemas Integrados de Software SIS <br /></bdi>
+                                   <bdi>Universidad Popular del Cesar, Sede Administrativa Balneario Hurtado Vía a Patillal- Valledupar Cesar - Colombia<br /></bdi>
+                                   <bdi>Línea gratuita de Quejas y Reclamos: 018000400380 - PBX: +57 5 5842671 - Fax: +57 5 5842671 - Directorio<br /></bdi>
+                                   <bdi>Horario de atención: Lunes a Viernes de 8:00am a 12:00m y de 2:00pm a 6:00pm<br /></bdi>
+                                <bdi>Contacto: webmaster@unicesar.edu.co - Condiciones de Uso y Políticas - Contáctenos - FAQ <br /></bdi>
+                                <bdi><a href="##">Licencia</a> &middot; <a href="##">Ayuda</a> &middot; <a href="##">Terminos  y condiciones</a> &middot; <a href="##">Privacidad</a><br /></bdi>
                              </p>
                        </div>
             	</div><!--/col-->

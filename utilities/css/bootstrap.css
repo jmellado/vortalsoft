@@ -11,7 +11,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 header {
-    background: url('../img/fondo.png');
+    background: url('../img/azul.png');
     color: hsl(0,0%,100%);
     height: 200px;
     text-align: center;
@@ -30,7 +30,7 @@ header p {
 }
 
 footer {
-    background: hsl(244,50%,50%);
+    background: hsl(235,50%,50%);
     clear: both;
     color: hsl(0,0%,100%);
     padding: 20px 0;
