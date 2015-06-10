@@ -12,7 +12,7 @@
         <header>
             <section class="contenedor">
                 <h1>VortalSoft</h1>
-                <p>Software Para la Gestion de Ventas</p>
+                <p>Software Para la Gestion Administrativa y Academica</p>
             </section>
         </header>
         

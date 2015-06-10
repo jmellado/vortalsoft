@@ -12,9 +12,9 @@
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav ">
         				<li class="active"><a href="<?php echo base_url()?>home">Inicio</a></li>
-        				<li><a href="<?php echo base_url()?>"> LA EMPRESA </a></li>
-                        <li><a href="<?php echo base_url()?>"> PRODUCTOS </a></li>
-                         <li><a href="<?php echo base_url()?>"> SERVICIO AL CLIENTE </a></li>
+        				<li><a href="<?php echo base_url()?>"> UNIVERSIDAD </a></li>
+                        <li><a href="<?php echo base_url()?>"> ADMISIONES </a></li>
+                         <li><a href="<?php echo base_url()?>"> SERVICIOS </a></li>
         				<li><a href="<?php echo base_url()?>"> CONTACTANOS </a></li>		     
                         <li class      ="dropdown">
                                 <a data-toggle ="dropdown" class="dropdown-toggle" href="">ACERCA DE<b class="caret"></b></a>
