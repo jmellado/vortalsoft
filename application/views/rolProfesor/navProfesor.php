@@ -15,8 +15,7 @@
         				<li><a href="###">Seguimiento</a></li>
                         <li><a href="<?php echo base_url()?>productos">Productos</a></li>
                         <li><a href="###">Pedidos</a></li>
-        				<li><a href="#">CLIENTE</a></li> 
-                        <li><a href="#">Servicio al Cliente</a></li> 
+        			    <li><a href="#">Servicio al Cliente</a></li> 
                         <li class      ="dropdown">
                         <a data-toggle ="dropdown" class="dropdown-toggle" href="#">Acerca de <b class="caret"></b></a>
                         <ul role       ="menu" class="dropdown-menu">

@@ -11,15 +11,15 @@
         </div>
         <div id="navbarCollapse" class="collapse navbar-collapse nav-justified">
            
-              <?php $nav='navAdmin';
+              <?php 
+                    $nav='navAdmin';
                     $folder_nav='rolAdmin';
               ?>
 
             <ul class="nav navbar-nav ">
 				<li class="active"><a href="<?php echo base_url()?>admin">Inicio</a></li>				
                 <li><a href="<?php echo base_url()?>estudiantes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Estudiantes</a></li>
-                <li><a href="<?php echo base_url()?>productos/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Productos</a></li>
-				<li><a href="<?php echo base_url()?>profesores/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Profesores</a></li>
+                <li><a href="<?php echo base_url()?>profesores/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Profesores</a></li>
                 <li><a href="<?php echo base_url()?>materias/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Materias</a></li>
             
 				<li class      ="dropdown">

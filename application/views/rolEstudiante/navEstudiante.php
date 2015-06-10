@@ -19,7 +19,7 @@
             				<li class="active"><a href="<?php echo base_url()?>estudiante">Inicio</a></li>
             			    <li><a href="<?php echo base_url()?>productos/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Productos</a></li>
                             <li><a href="<?php echo base_url()?>clientes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Clientes</a></li>
-            				<li><a href="##">VENDEDOR</a></li>      
+            				    
                             <li class      ="dropdown">
                             <a data-toggle ="dropdown" class="dropdown-toggle" href="#"> Recorridos <b class="caret"></b></a>
                             <ul role       ="menu" class="dropdown-menu">

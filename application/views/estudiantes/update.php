@@ -1,4 +1,3 @@
-
 <div class="container_12">
 			<div class="grid_12">
 				<div class="row">
@@ -65,7 +64,7 @@
 																		         <input type="text" name="id" placeholder="id estudiante" class="form-control" value="<?php echo $datos->id_estudiante?>">
 																		        </div>
 																		        <div class="col-xs-4">
-																		            <span class="help-block"><?php echo form_error('id_producto'); ?></span>
+																		            <span class="help-block"><?php echo form_error('id'); ?></span>
                                                                                </div>
 																		    </div>
                                                                             <div class="form-group">
