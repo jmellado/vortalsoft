@@ -30,7 +30,8 @@ header p {
 }
 
 footer {
-    background: hsl(235,50%,50%);
+    /*background: hsl(56,122%,210%);*/
+    background-color: #387ad2;
     clear: both;
     color: hsl(0,0%,100%);
     padding: 20px 0;
@@ -40,6 +41,12 @@ footer {
 }
 footer a:hover {
     color: hsl(0,0%,100%);
+    text-decoration: underline;
+}
+
+footer a {
+    /*color: hsl(0,0%,100%);*/
+    color: #0B182A;
     text-decoration: underline;
 }
 
