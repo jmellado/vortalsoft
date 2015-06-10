@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-06-2015 a las 21:30:45
+-- Tiempo de generación: 10-06-2015 a las 12:50:16
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -92,7 +92,8 @@ CREATE TABLE IF NOT EXISTS `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`id_estudiante`, `nom_estudiante`, `ape_estudiante`, `sexo`, `fecha_nacimiento`, `direccion`, `correo`, `telefono`) VALUES
-('1065', 'jeiner', 'mellado valencia', 'm', '1993-11-30', 'calle 7 # 29-90', 'jeiner@hotmail.com', '3135028786');
+('1065', 'jeiner enrique', 'mellado valencia', 'm', '1993-11-30', 'calle 7 # 29-90', 'jeiner@hotmail.com', '3135028786'),
+('1066', 'Miguel jose', 'Palomino Cerpa', 'm', '1992-10-14', 'calle 4 # 13-24', 'migueljose@hotmail.com', '3216968715');
 
 -- --------------------------------------------------------
 
@@ -112,6 +113,13 @@ CREATE TABLE IF NOT EXISTS `productos` (
   KEY `fk_productos_categorias_idx` (`id_categoria`),
   KEY `fk_productos_proveedores1_idx` (`id_proveedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id_producto`, `nom_producto`, `cantidad`, `valor_producto`, `descripcion`, `id_categoria`, `id_proveedor`) VALUES
+('1', 'FAB', 45, 4000, 'Detergente  en polvo 350 gr', '1', '1065');
 
 -- --------------------------------------------------------
 
@@ -136,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `profesores` (
 --
 
 INSERT INTO `profesores` (`id_profesor`, `nom_profesor`, `ape_profesor`, `sexo`, `fecha_nacimiento`, `direccion`, `correo`, `telefono`) VALUES
-('1065', 'hernando fabian', 'lavado nariño', 'm', '1956-11-23', 'calle 4 # 24-86', 'lavado@hotmail.com', '3124454446'),
+('1065', 'Hernando Fabian', 'Lavado nariño', 'm', '1956-11-23', 'calle 4 # 24-86', 'lavado@hotmail.com', '3124454446'),
 ('1066', 'omar', 'trujillo', 'm', '2015-05-07', 'diagonal 23', 'omar@hotmail.com', '3148575874');
 
 -- --------------------------------------------------------
@@ -186,8 +194,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `rol`, `user`, `pass`, `acceso`, `id_empleado`) VALUES
 ('1', 'Administrador', 'Amiguel', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1', '1065'),
-('2', 'Estudiante', 'Emiguel', 'e1899d2b87b7d2e2398535d4fe444d23', '1', '1065'),
-('3', 'Docente', 'Dmiguel', '614216bb4c4543a89abad1c2c6fb1e5f', '1', '1065');
+('2', 'Estudiante', 'Emiguel', '96281f7d23fb17a5b844b114de9f1a708ea3d9df', '1', '1065'),
+('3', 'Profesor', 'Dmiguel', '72a2aa63f2926de5d90443e59083aed479387b3f', '1', '1065');
 
 --
 -- Restricciones para tablas volcadas
