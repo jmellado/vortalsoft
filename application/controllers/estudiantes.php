@@ -101,10 +101,10 @@ class Estudiantes extends CI_Controller {
 				
 				if ($guardar == true) {
 					$this->session->set_flashdata('ControllerMessage','Se Ha Guardado Correctamente');
-					redirect(base_url().'estudiantes/index'.$folder_nav.'/'.$nav,301);
+					redirect(base_url().'estudiantes/index/'.$folder_nav.'/'.$nav,301);
 				} else {
 					$this->session->set_flashdata('ControllerMessage','Se ha Producido un Error Intentelo Nuevamente');
-					redirect(base_url().'estudiantes/index'.$folder_nav.'/'.$nav,301);
+					redirect(base_url().'estudiantes/index/'.$folder_nav.'/'.$nav,301);
 				}
 				
 			}
@@ -125,10 +125,10 @@ class Estudiantes extends CI_Controller {
 				
 		if ($guardar == true) {
 			$this->session->set_flashdata('ControllerMessage','Se ha Eliminado Correctamente');
-			redirect(base_url().'estudiantes/index'.$folder_nav.'/'.$nav,301);
+			redirect(base_url().'estudiantes/index/'.$folder_nav.'/'.$nav,301);
 		} else {
 			$this->session->set_flashdata('ControllerMessage','Se ha Producido un Error Intentelo Nuevamente');
-			redirect(base_url().'estudiantes/index'.$folder_nav.'/'.$nav,301);
+			redirect(base_url().'estudiantes/index/'.$folder_nav.'/'.$nav,301);
 		}
 		$data['titulo']				=               'Vortalsoft';
 		$data['viewControlador']	=		       'estudiantes';
@@ -142,8 +142,8 @@ class Estudiantes extends CI_Controller {
        {
 
 		
-		        $criterio             =  $this->input->post("criterio");
-			    $valor                =     $this->input->post("valor");
+	    $criterio                     =  $this->input->post("criterio");
+	    $valor                        =     $this->input->post("valor");
 		$data['titulo']				  =                    'Vortalsoft';
 		$data['viewControlador']	  =		              'estudiantes';
 		$data['viewNave']	          =                     $folder_nav;
