@@ -8,15 +8,15 @@ $config = array(
 
 		
 
-		'vali_estudiantes'	=>	array(
-			array('field' => 'id_estudiante',			'label'=> 'id_estudiante',			'rules' => 'required|is_string|trim|xss_clean'),
-			array('field' => 'nom_estudiante',		    'label'=> 'nom_estudiante', 		'rules' => 'required|is_string|trim|xss_clean'),
-			array('field' => 'ape_estudiante', 	        'label'=> 'ape_estudiante', 		'rules' => 'required|is_string|trim|xss_clean'),
-			array('field' => 'fecha_nacimiento', 	    'label'=> 'fecha_nacimiento', 		'rules' => 'required|trim|xss_clean'),		
+			'vali_estudiantes'	=>	array(
+			array('field' => 'id',			            'label'=> 'id',			            'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'nombre',		            'label'=> 'nombre', 		        'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'apellido', 	            'label'=> 'apellido', 		        'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'fecha', 	                'label'=> 'fecha', 		            'rules' => 'required|trim|xss_clean'),		
 			array('field' => 'direccion', 	            'label'=> 'direccion', 		        'rules' => 'required|is_string|trim|xss_clean'),	
-			array('field' => 'telefono', 	            'label'=> 'Telefono', 		        'rules' => 'required|numeric|trim|xss_clean'),		
-            array('field' => 'correo', 		            'label'=> 'Correo', 		        'rules' => 'required|valid_email|trim|xss_clean'),
-			array('field' => 'sexo', 		            'label'=> 'Sexo', 			        'rules' => 'required|xss_clean|validaSelect')
+			array('field' => 'telefono', 	            'label'=> 'telefono', 		        'rules' => 'required|numeric|trim|xss_clean'),		
+            array('field' => 'correo', 		            'label'=> 'correo', 		        'rules' => 'required|valid_email|trim|xss_clean'),
+			array('field' => 'sexo', 		            'label'=> 'sexo', 			        'rules' => 'required|xss_clean|validaSelect')
 			),
                    
 				

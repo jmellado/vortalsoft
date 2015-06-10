@@ -60,7 +60,7 @@
 							
 																		</form>
                                                                             <div class="form-group">
-																		        <label class="control-label col-xs-4">Id Producto (*):</label>
+																		        <label class="control-label col-xs-4">Id Estudiante (*):</label>
 																		        <div class="col-xs-4">
 																		            <input type="text" name="id" placeholder="id estudiantes"class="form-control" value="<?php echo set_value("id")?>">
 																		        </div>
