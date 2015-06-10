@@ -149,7 +149,7 @@ class Estudiantes extends CI_Controller {
 		$data['viewNave']	          =                     $folder_nav;
 		$data['nave']		    	  =		                       $nav;
 		$data['contenido']			  =		                   'search';
-		$data['datos']				  =		$this->productos_model->searchEstudiantes($criterio,$valor);
+		$data['datos']				  =		$this->estudiantes_model->searchEstudiantes($criterio,$valor);
       
 		$this->load->view('masterPage/masterPage', $data);
 		

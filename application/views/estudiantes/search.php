@@ -1,4 +1,3 @@
-
 <div class="container_12">
 			<div class="grid_12">
 				<div class="row">
@@ -29,7 +28,7 @@
 				      	             
 												 <div class="panel panel-default">
 													  <div class="panel-heading">
-													  	 <h1>Gestion Estudiantes <small></small></h1>
+													  	 <h1>Gestion Estudiantes <small>Buscar</small></h1>
 													  </div>
 												  </div>
 									          
@@ -45,8 +44,7 @@
 								        $folder_nav= $viewNave;
 								       
 								 ?>
-
-									                               <?php 
+                                                          <?php 
 																		$atributos = array( 'search' => 'form','name'=>'form' ,'class'=>'navbar-form navbar-right' ,'role'=>'search');
 																		echo form_open_multipart('estudiantes/search/'.$folder_nav.'/'.$nav,$atributos);
 																    ?>
@@ -67,9 +65,7 @@
 															    	  <?php 
 																	   echo form_close();
 												                     ?>  
-
-
-								<div class="panel panel-default">
+							<div class="panel panel-default">
 												   <div class="panel-heading">
 													    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>estudiantes/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Nuevo </a>
 													   </div>
