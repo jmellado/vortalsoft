@@ -134,11 +134,24 @@
 																		        <label class="control-label col-xs-4">Sexo (*):</label>
 																		        <div class="col-xs-4">
                                                                                     <select name="sexo" id="sexo" class="form-control">
-																						<option value="0">Seleccionar</option>
-																						<option value="m">Masculino</option>
-																						<option value="f">Femenino</option>	
-																					</select>
-
+                                                                                               <?php
+                                                                                                  $actual= $datos->sexo;
+	                                                                                              if ($actual == "m")
+																								{
+																								?>
+                                                                                                    <option value="m" selected >Masculino</option>
+	                                                                                                <option value="f">Femenino</option>	
+	                                                                                         
+                                                                                                <?php 
+																								} else {
+																								 ?>
+																								    <option value="m">Masculino</option>
+                                                                                                    <option value="f"  selected >Femenino</option>	
+                                                                                         	  
+																							   <?php
+																							    } 
+																							    ?>
+																						</select>
 																		        </div>
 																		        <div class="col-xs-4">
 																		            <span class="help-block"><?php echo form_error('sexo'); ?></span>
