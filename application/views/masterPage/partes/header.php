@@ -11,7 +11,7 @@
     <body>
         <header>
             <section class="contenedor">
-                <h1>VentaSoft</h1>
+                <h1>VortalSoft</h1>
                 <p>Software Para la Gestion de Ventas</p>
             </section>
         </header>
