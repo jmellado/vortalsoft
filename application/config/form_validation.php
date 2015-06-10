@@ -6,14 +6,22 @@ $config = array(
 		* Formulario
 		*/
 
-		'formulario/add'	=>	array(
-			array('field' => 'id',			'label'=> 'Id',				'rules' => 'required|is_string|trim|xss_clean'),
-			array('field' => 'nombre',		'label'=> 'Nombre', 		'rules' => 'required|is_string|trim|xss_clean'),
-			array('field' => 'direccion', 	'label'=> 'Direccion', 		'rules' => 'required|is_string|trim|xss_clean'),
-			array('field' => 'telefono', 	'label'=> 'Telefono', 		'rules' => 'required|numeric|trim|xss_clean'),			
-			array('field' => 'correo', 		'label'=> 'Correo', 		'rules' => 'required|valid_email|trim|xss_clean'),
-			array('field' => 'sexo', 		'label'=> 'Sexo', 			'rules' => 'required|xss_clean|validaSelect')
+		
+
+		'vali_estudiantes'	=>	array(
+			array('field' => 'id_estudiante',			'label'=> 'id_estudiante',			'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'nom_estudiante',		    'label'=> 'nom_estudiante', 		'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'ape_estudiante', 	        'label'=> 'ape_estudiante', 		'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'fecha_nacimiento', 	    'label'=> 'fecha_nacimiento', 		'rules' => 'required|trim|xss_clean'),		
+			array('field' => 'direccion', 	            'label'=> 'direccion', 		        'rules' => 'required|is_string|trim|xss_clean'),	
+			array('field' => 'telefono', 	            'label'=> 'Telefono', 		        'rules' => 'required|numeric|trim|xss_clean'),		
+            array('field' => 'correo', 		            'label'=> 'Correo', 		        'rules' => 'required|valid_email|trim|xss_clean'),
+			array('field' => 'sexo', 		            'label'=> 'Sexo', 			        'rules' => 'required|xss_clean|validaSelect')
 			),
+                   
+				
+
+
 		'proveedores'	=> array(
 			array('field' => 'id',			'label'=> 'Id',				'rules' => 'required|is_string|trim|xss_clean'),
 			array('field' => 'nombre',		'label'=> 'Nombre', 		'rules' => 'required|is_string|trim|xss_clean'),

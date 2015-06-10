@@ -16,7 +16,7 @@
 
                     <div id="navbarCollapse" class="collapse navbar-collapse nav-justified">
                         <ul class="nav navbar-nav ">
-            				<li class="active"><a href="<?php echo base_url()?>vendedor">Inicio</a></li>
+            				<li class="active"><a href="<?php echo base_url()?>estudiante">Inicio</a></li>
             			    <li><a href="<?php echo base_url()?>productos/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Productos</a></li>
                             <li><a href="<?php echo base_url()?>clientes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Clientes</a></li>
             				<li><a href="##">VENDEDOR</a></li>      
