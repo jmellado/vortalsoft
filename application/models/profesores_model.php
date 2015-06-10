@@ -33,6 +33,19 @@ class Profesores_model extends CI_Model {
 		return $query->row();
 	}
 
+		public function searchProfesores($criterio,$valor)
+	{
+		$consulta=array($criterio=>$valor);
+		
+
+		$query=$this->db
+				->select('*')
+				->from('profesores')
+				->like($consulta)
+				->get();
+		return $query->result();
+	}
+
 	public function updateProfesores($datos=array(),$id)
 	{
 		$this->db->where('id_profesor', $id);

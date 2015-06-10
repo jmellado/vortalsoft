@@ -3,7 +3,7 @@
 /**
  * 
  */
-class Docente extends CI_Controller {
+class Profesor extends CI_Controller {
 	
 	public function __construct() {
 		parent::__construct();
@@ -15,10 +15,10 @@ class Docente extends CI_Controller {
 		{
 			redirect(base_url().'login');
 		}
-		$data['titulo']             =   'Bienvenido Docente';
-		$data['viewControlador']	=	'rolDocente';
-		$data['viewNave']	        =   'rolDocente';
-	    $data['nave']	     		=	'navDocente';
+		$data['titulo']             =   'Bienvenido Profesor';
+		$data['viewControlador']	=	'rolProfesor';
+		$data['viewNave']	        =   'rolProfesor';
+	    $data['nave']	     		=	'navProfesor';
 		$data['contenido']			=	'index';
 		$this->load->view('masterPage/masterPage', $data);
 	}
