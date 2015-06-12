@@ -20,6 +20,8 @@
 				<li class="active"><a href="<?php echo base_url()?>admin">Inicio</a></li>				
                 <li><a href="<?php echo base_url()?>estudiantes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Estudiantes</a></li>
                 <li><a href="<?php echo base_url()?>profesores/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Profesores</a></li>
+                <li><a href="<?php echo base_url()?>decanaturas/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Decanaturas</a></li>
+                <li><a href="<?php echo base_url()?>programas/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Programas</a></li>
                 <li><a href="<?php echo base_url()?>materias/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Materias</a></li>
             
 				<li class      ="dropdown">

@@ -29,8 +29,24 @@ $config = array(
             array('field' => 'correo', 		            'label'=> 'correo', 		        'rules' => 'required|valid_email|trim|xss_clean'),
 			array('field' => 'sexo', 		            'label'=> 'sexo', 			        'rules' => 'required|xss_clean|validaSelect')
 			),
+
+		'vali_decanaturas'	=>	array(
+			array('field' => 'id_decanatura',			        'label'=> 'id_decanatura',			        'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'nom_decanatura',		            'label'=> 'nom_decanatura', 		        'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'jefe_decanatura', 	            'label'=> 'jefe_decanatura', 		        'rules' => 'required|is_string|trim|xss_clean')
+			
+			),
+
+		'vali_programas'	=>	array(
+			array('field' => 'id_programa',			            'label'=> 'id_programa',			        'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'nom_programa',		            'label'=> 'nom_programa', 		            'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'jefe_programa', 	                'label'=> 'jefe_programa', 		            'rules' => 'required|is_string|trim|xss_clean'),
+		    array('field' => 'id_decanatura',			        'label'=> 'id_decanatura',			        'rules' => 'required|is_string|trim|xss_clean')
+			),
                    
 		
+
+
 
 	    'vali_Productos'	=> array(
 			array('field' => 'id_producto',	   'label'=> 'id_producto',	    	'rules' => 'required|is_string|trim|xss_clean',),
