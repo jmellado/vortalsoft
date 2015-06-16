@@ -46,4 +46,16 @@ class Materias_model extends CI_Model {
 		$this->db->delete('materias');
 		return true;
 	}
+
+
+	public function searchMaterias($criterio,$valor)
+	{
+		$consulta=array($criterio=>$valor);
+		$query=$this->db
+				->select('*')
+				->from('materias')
+				->like($consulta)
+				->get();
+		return $query->result();
+	}
 }

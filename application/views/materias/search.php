@@ -28,7 +28,7 @@
 				      	             
 												 <div class="panel panel-default">
 													  <div class="panel-heading">
-													  	 <h1>Gestion Materias <small></small></h1>
+													  	 <h1>Gestion Materias <small>Buscar</small></h1>
 													  </div>
 												  </div>
 									          
@@ -44,8 +44,7 @@
 								        $folder_nav= $viewNave;
 								       
 								 ?>
-
-									                               <?php 
+                                                          <?php 
 																		$atributos = array( 'search' => 'form','name'=>'form' ,'class'=>'navbar-form navbar-right' ,'role'=>'search');
 																		echo form_open_multipart('materias/search/'.$folder_nav.'/'.$nav,$atributos);
 																    ?>
@@ -55,7 +54,7 @@
 				                                                                          <option value="nom_materia" selected >Nombre</option>
 				                                                                          <option value="num_creditos" >Creditos</option>
 				                                                                          <option value="intensidad_horaria" >Horas</option>
-				                                                                    
+				                                                                          
 				                                                            	     </select>
 
 																		 		    <input type="text"  name="valor"  value="<?php echo set_value("valor")?>"  class="form-control" placeholder="Buscar materia">
@@ -64,9 +63,7 @@
 															    	  <?php 
 																	   echo form_close();
 												                     ?>  
-
-
-								<div class="panel panel-default">
+							<div class="panel panel-default">
 												   <div class="panel-heading">
 													    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>materias/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Nuevo </a>
 													   </div>
