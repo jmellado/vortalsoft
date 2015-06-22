@@ -17,14 +17,18 @@
                     <div id="navbarCollapse" class="collapse navbar-collapse nav-justified">
                         <ul class="nav navbar-nav ">
             				<li class="active"><a href="<?php echo base_url()?>estudiante">Inicio</a></li>
-            			    <li><a href="<?php echo base_url()?>productos/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Productos</a></li>
-                            <li><a href="<?php echo base_url()?>clientes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Clientes</a></li>
+            			    <li><a href="<?php echo base_url()?>productos/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Hoja de vida</a></li>
+                            <li><a href="<?php echo base_url()?>clientes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Liquidacion</a></li>
+                            <li><a href="<?php echo base_url()?>clientes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Matricula en linea</a></li>
+                            <li><a href="<?php echo base_url()?>clientes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Consultar matricula</a></li>
+                            <li><a href="<?php echo base_url()?>clientes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Horario</a></li>
+                            <li><a href="<?php echo base_url()?>clientes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Pensum</a></li>
             				    
                             <li class      ="dropdown">
-                            <a data-toggle ="dropdown" class="dropdown-toggle" href="#"> Recorridos <b class="caret"></b></a>
+                            <a data-toggle ="dropdown" class="dropdown-toggle" href="#"> Otras Funcionalidades <b class="caret"></b></a>
                             <ul role       ="menu" class="dropdown-menu">
-                            <li><a href    ="#">Ruta del dia</a></li>
-                            <li><a href    ="#">Ubicacion Actual</a></li>
+                            <li><a href    ="#">Capacitaciones</a></li>
+                            <li><a href    ="#">Deuda de estudiante</a></li>
                             </ul>
                             </li>
                         </ul>
