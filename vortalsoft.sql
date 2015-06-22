@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 10-06-2015 a las 12:50:16
+-- Tiempo de generación: 22-06-2015 a las 14:06:55
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -43,6 +43,27 @@ INSERT INTO `categorias` (`id_categoria`, `nom_categoria`) VALUES
 ('4', 'Bebidass alcoholicas'),
 ('5', 'Bebidass hidratantes'),
 ('6', 'Bebidas Refrescantes');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `decanaturas`
+--
+
+CREATE TABLE IF NOT EXISTS `decanaturas` (
+  `id_decanatura` varchar(40) NOT NULL,
+  `nom_decanatura` varchar(45) NOT NULL,
+  `jefe_decanatura` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_decanatura`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `decanaturas`
+--
+
+INSERT INTO `decanaturas` (`id_decanatura`, `nom_decanatura`, `jefe_decanatura`) VALUES
+('10', 'Derecho', 'Manuel Ruiz Pineda'),
+('11', 'Ingenierias y Tecnologias', 'Alvaro Oñate  Bowen');
 
 -- --------------------------------------------------------
 
@@ -92,8 +113,55 @@ CREATE TABLE IF NOT EXISTS `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`id_estudiante`, `nom_estudiante`, `ape_estudiante`, `sexo`, `fecha_nacimiento`, `direccion`, `correo`, `telefono`) VALUES
-('1065', 'jeiner enrique', 'mellado valencia', 'm', '1993-11-30', 'calle 7 # 29-90', 'jeiner@hotmail.com', '3135028786'),
+('1065', 'jeiner enrique', 'mellado valencia', 'f', '1993-11-30', 'calle 7 # 29-90', 'jeiner@hotmail.com', '3135028786'),
 ('1066', 'Miguel jose', 'Palomino Cerpa', 'm', '1992-10-14', 'calle 4 # 13-24', 'migueljose@hotmail.com', '3216968715');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `materias`
+--
+
+CREATE TABLE IF NOT EXISTS `materias` (
+  `id_materia` varchar(20) NOT NULL,
+  `nom_materia` varchar(45) NOT NULL,
+  `num_creditos` varchar(3) NOT NULL,
+  `intensidad_horaria` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_materia`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `materias`
+--
+
+INSERT INTO `materias` (`id_materia`, `nom_materia`, `num_creditos`, `intensidad_horaria`) VALUES
+('12', 'mecanica', '12', '4'),
+('1234', 'calculo', '6', '4'),
+('13', 'redes', '4', '4');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pensum`
+--
+
+CREATE TABLE IF NOT EXISTS `pensum` (
+  `id_pensum` varchar(40) NOT NULL,
+  `id_programa` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_pensum`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pensum_mat`
+--
+
+CREATE TABLE IF NOT EXISTS `pensum_mat` (
+  `id_pensum` varchar(40) NOT NULL,
+  `id_materia` varchar(45) NOT NULL,
+  `semestre` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -150,6 +218,28 @@ INSERT INTO `profesores` (`id_profesor`, `nom_profesor`, `ape_profesor`, `sexo`,
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `programas`
+--
+
+CREATE TABLE IF NOT EXISTS `programas` (
+  `id_programa` varchar(40) NOT NULL,
+  `nom_programa` varchar(45) NOT NULL,
+  `jefe_programa` varchar(45) NOT NULL,
+  `id_decanatura` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_programa`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `programas`
+--
+
+INSERT INTO `programas` (`id_programa`, `nom_programa`, `jefe_programa`, `id_decanatura`) VALUES
+('20', 'Ingenieria de Sistemas', 'Alvaro Bowen Oñate', '11'),
+('21', 'Ingenieria Electronica', 'Hugo Sosa', '11');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `proveedores`
 --
 
@@ -195,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 INSERT INTO `usuarios` (`id_usuario`, `rol`, `user`, `pass`, `acceso`, `id_empleado`) VALUES
 ('1', 'Administrador', 'Amiguel', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1', '1065'),
 ('2', 'Estudiante', 'Emiguel', '96281f7d23fb17a5b844b114de9f1a708ea3d9df', '1', '1065'),
-('3', 'Profesor', 'Dmiguel', '72a2aa63f2926de5d90443e59083aed479387b3f', '1', '1065');
+('3', 'Profesor', 'Pmiguel', '72a2aa63f2926de5d90443e59083aed479387b3f', '1', '1065');
 
 --
 -- Restricciones para tablas volcadas
