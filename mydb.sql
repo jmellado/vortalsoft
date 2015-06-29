@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-06-2015 a las 18:58:19
+-- Tiempo de generación: 29-06-2015 a las 22:12:47
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -23,47 +23,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `carga_academica`
---
-
-CREATE TABLE IF NOT EXISTS `carga_academica` (
-  `id_profesor` varchar(20) NOT NULL,
-  `id_materia` varchar(20) NOT NULL,
-  `año` varchar(20) NOT NULL,
-  `semestre` varchar(1) NOT NULL,
-  KEY `fk_profesores_has_materias_materias1_idx` (`id_materia`),
-  KEY `fk_profesores_has_materias_profesores1_idx` (`id_profesor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `decanaturas`
 --
 
 CREATE TABLE IF NOT EXISTS `decanaturas` (
-  `id_decanatura` varchar(45) NOT NULL,
+  `id_decanatura` varchar(20) NOT NULL,
   `nom_decanatura` varchar(45) NOT NULL,
   `jefe_decanatura` varchar(45) NOT NULL,
   PRIMARY KEY (`id_decanatura`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `empleados`
---
-
-CREATE TABLE IF NOT EXISTS `empleados` (
-  `id_empleado` varchar(20) NOT NULL,
-  `nom_empleado` varchar(45) NOT NULL,
-  `ape_empleado` varchar(45) NOT NULL,
-  `sexo` varchar(1) NOT NULL,
-  `fecha_nacimiento` date NOT NULL,
-  `direccion` varchar(45) NOT NULL,
-  `correo` varchar(45) NOT NULL,
-  `telefono` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_empleado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -101,15 +68,63 @@ CREATE TABLE IF NOT EXISTS `materias` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `matricula`
+--
+
+CREATE TABLE IF NOT EXISTS `matricula` (
+  `id_matricula` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_matricula`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mat_grupos`
+--
+
+CREATE TABLE IF NOT EXISTS `mat_grupos` (
+  `idmat_grupo` varchar(25) NOT NULL,
+  `id_grupo` varchar(10) NOT NULL,
+  `cant_max` varchar(45) NOT NULL,
+  PRIMARY KEY (`idmat_grupo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `pensum`
 --
 
 CREATE TABLE IF NOT EXISTS `pensum` (
-  `id_pensum` varchar(40) NOT NULL,
-  `id_programa` varchar(40) NOT NULL,
-  PRIMARY KEY (`id_pensum`),
-  KEY `fk_pensum_programas1_idx` (`id_programa`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_pensum` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_pensum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pensum_materias`
+--
+
+CREATE TABLE IF NOT EXISTS `pensum_materias` (
+  `id_pensum` varchar(20) NOT NULL,
+  `id_materia` varchar(20) NOT NULL,
+  `semestre` varchar(45) NOT NULL,
+  KEY `fk_pensum_has_materias_materias1_idx` (`id_materia`),
+  KEY `fk_pensum_has_materias_pensum1_idx` (`id_pensum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `personal`
+--
+
+CREATE TABLE IF NOT EXISTS `personal` (
+  `id_personal` varchar(45) NOT NULL,
+  `rol` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_personal`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -136,27 +151,10 @@ CREATE TABLE IF NOT EXISTS `profesores` (
 --
 
 CREATE TABLE IF NOT EXISTS `programas` (
-  `id_programa` varchar(40) NOT NULL,
+  `id_programa` varchar(20) NOT NULL,
   `nom_programa` varchar(45) NOT NULL,
   `jefe_programa` varchar(45) NOT NULL,
-  `id_decanatura` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_programa`),
-  KEY `fk_programas_decanaturas1_idx` (`id_decanatura`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `proveedores`
---
-
-CREATE TABLE IF NOT EXISTS `proveedores` (
-  `id_proveedor` varchar(20) NOT NULL,
-  `nom_proveedor` varchar(45) NOT NULL,
-  `ape_proveedor` varchar(45) NOT NULL,
-  `telefono` varchar(45) NOT NULL,
-  `correo` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_proveedor`)
+  PRIMARY KEY (`id_programa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -166,33 +164,44 @@ CREATE TABLE IF NOT EXISTS `proveedores` (
 --
 
 CREATE TABLE IF NOT EXISTS `roles` (
-  `id_rol` int(11) NOT NULL AUTO_INCREMENT,
+  `id_roles` int(11) NOT NULL AUTO_INCREMENT,
   `nom_rol` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_rol`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id_roles`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id_usuario` varchar(20) NOT NULL,
+  `rol` varchar(45) NOT NULL,
+  `user` varchar(45) NOT NULL,
+  `pass` varchar(45) NOT NULL,
+  `acceso` varchar(45) NOT NULL,
+  `id_personal` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_usuario`),
+  KEY `fk_usuarios_personal_idx` (`id_personal`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `carga_academica`
+-- Filtros para la tabla `pensum_materias`
 --
-ALTER TABLE `carga_academica`
-  ADD CONSTRAINT `fk_profesores_has_materias_profesores1` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_profesores_has_materias_materias1` FOREIGN KEY (`id_materia`) REFERENCES `materias` (`id_materia`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `pensum_materias`
+  ADD CONSTRAINT `fk_pensum_has_materias_pensum1` FOREIGN KEY (`id_pensum`) REFERENCES `pensum` (`id_pensum`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_pensum_has_materias_materias1` FOREIGN KEY (`id_materia`) REFERENCES `materias` (`id_materia`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `pensum`
+-- Filtros para la tabla `usuarios`
 --
-ALTER TABLE `pensum`
-  ADD CONSTRAINT `fk_pensum_programas1` FOREIGN KEY (`id_programa`) REFERENCES `programas` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `programas`
---
-ALTER TABLE `programas`
-  ADD CONSTRAINT `fk_programas_decanaturas1` FOREIGN KEY (`id_decanatura`) REFERENCES `decanaturas` (`id_decanatura`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `fk_usuarios_personal` FOREIGN KEY (`id_personal`) REFERENCES `personal` (`id_personal`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
