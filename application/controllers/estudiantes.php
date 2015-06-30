@@ -6,6 +6,8 @@ class Estudiantes extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('estudiantes_model');
+		$this->load->model('personal_model');
+		$this->load->model('usuarios_model');
 	}
 
 	public function index($folder_nav=null,$nav=null)
@@ -34,7 +36,7 @@ class Estudiantes extends CI_Controller {
 
 		if ($this->form_validation->run('vali_estudiantes')) { //ejecuto el archivo de form_validation
 				
-				$datos=array(
+				$datos_estudiantes=array(
 					'id_estudiante'       =>$this->input->post("id"),
 					'nom_estudiante'      =>$this->input->post("nombre"),
 					'ape_estudiante'      =>$this->input->post("apellido"),
@@ -45,20 +47,48 @@ class Estudiantes extends CI_Controller {
 					'telefono'            =>$this->input->post("telefono")
 					);
 
-				$guardar= $this->estudiantes_model->insertEstudiantes($datos);
-				
-				if ($guardar == true) {
-					$this->session->set_flashdata('ControllerMessage','Se Ha Guardado Correctamente');
-					redirect(base_url().'estudiantes/add/'.$folder_nav.'/'.$nav,301);
+				 $datos_personal =array(
+					'id_personal'           =>$this->input->post("id"),
+					'rol'                   =>"Estudiante"
 					
-				} else {
-					$this->session->set_flashdata('ControllerMessage','Se ha Producido un Error Intentelo Nuevamente');
-					redirect(base_url().'estudiantes/add/'.$folder_nav.'/'.$nav,301);
-				}
-	
-	    	}
+					         );
 
-		}
+				$datos_usuarios =array(
+					'rol'                  =>"Estudiante",
+					'user'                 =>$this->input->post("nombre"),
+					'pass'                 =>sha1($this->input->post("id")),
+					'acceso'               =>"1",
+					'id_personal'           =>$this->input->post("id")
+					         );
+
+			
+                     $id = $this->input->post("id");
+                     $validar= $this->personal_model->validarExistenciaPersonaId($id);
+
+                    if ($validar == true) {
+							$this->session->set_flashdata('ControllerMessage','Usuario registrado anteriormente, verifique el codigo e intentelo nuevamente');
+							redirect(base_url().'estudiantes/add/'.$folder_nav.'/'.$nav,301);
+				    } else 
+				    {
+				    	$consulta_estudiantes = $this->estudiantes_model->insertEstudiantes($datos_estudiantes);
+						$consulta_personal = $this->personal_model->insertPersona($datos_personal);
+						$consulta_usuarios = $this->usuarios_model->insertUsuario($datos_usuarios);
+				
+						if ($consulta_estudiantes == true && $consulta_personal == true && $consulta_usuarios == true) 
+						{
+							$this->session->set_flashdata('ControllerMessage','Se Ha Guardado Correctamente');
+							redirect(base_url().'estudiantes/add/'.$folder_nav.'/'.$nav,301);
+							
+						} else {
+							$this->session->set_flashdata('ControllerMessage','Se ha Producido un Error Intentelo Nuevamente');
+							redirect(base_url().'estudiantes/add/'.$folder_nav.'/'.$nav,301);
+						}
+
+
+	    	        }
+
+		  }
+	    }
 		$data['titulo']				=               'Vortalsoft';
 		$data['viewControlador']	=		       'estudiantes';
 		$data['viewNave']	        =                $folder_nav;
@@ -121,9 +151,13 @@ class Estudiantes extends CI_Controller {
 
 	public function delete($id=null,$folder_nav=null,$nav=null)
 	{
-		$guardar= $this->estudiantes_model->deleteEstudiantes($id);
+		
+		$consulta_usuarios= $this->usuarios_model->deleteUsuario($id);
+		$consulta_personal= $this->personal_model->deletePersona($id);
+		$consulta_estudiantes =$this->estudiantes_model->deleteEstudiantes($id);
+
 				
-		if ($guardar == true) {
+		if ($consulta_usuarios == true && $consulta_personal == true && $consulta_estudiantes == true) {
 			$this->session->set_flashdata('ControllerMessage','Se ha Eliminado Correctamente');
 			redirect(base_url().'estudiantes/index/'.$folder_nav.'/'.$nav,301);
 		} else {
