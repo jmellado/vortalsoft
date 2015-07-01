@@ -35,8 +35,10 @@ class Cargasacademicas_model extends CI_Model {
 
 	public function updateCargas($datos=array(),$id,$id1)
 	{
+		//$consulta=array('id_profesor'=>$id,'id_materia'=>$id1);
+		
+		//$this->db->where('id_profesor', $id);
 		$this->db->where('id_profesor', $id);
-		$this->db->where('id_materia', $id1);
 		$this->db->update('carga_academica', $datos);
 		return true;
 	}
