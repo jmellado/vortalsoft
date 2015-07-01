@@ -61,11 +61,9 @@ $config = array(
 			array('field' => 'id',			            'label'=> 'id',			            'rules' => 'required|is_string|trim|xss_clean'),
 			array('field' => 'id1',		                'label'=> 'id1', 		             'rules' => 'required|is_string|trim|xss_clean'),
 			array('field' => 'ano', 	                'label'=> 'ano', 		            'rules' => 'required|numeric|trim|xss_clean'),
-             array('field' => 'semestre', 		        'label'=> 'semestre', 			    'rules' => 'required|xss_clean|validaSelect')
+            array('field' => 'semestre', 		        'label'=> 'semestre', 			    'rules' => 'required|xss_clean|validaSelect')
 			)
 	    
-	   
-
 		)
 
  ?>
