@@ -65,18 +65,14 @@ $config = array(
 	     'vali_materias'	=>	array(
 			array('field' => 'id',			            'label'=> 'id',			            'rules' => 'required|is_string|trim|xss_clean'),
 			array('field' => 'nombre',		            'label'=> 'nombre', 		        'rules' => 'required|is_string|trim|xss_clean'),
-			//array('field' => 'creditos', 	            'label'=> 'creditos', 		        'rules' => 'required|numeric|trim|xss_clean'),
 			array('field' => 'horas', 	                'label'=> 'horas', 		            'rules' => 'required|numeric|trim|xss_clean'),		
-			
 			array('field' => 'creditos', 		        'label'=> 'creditos', 			    'rules' => 'required|xss_clean|validaSelect')
 			),
 
 	     'vali_cargas'	=>	array(
 			array('field' => 'id',			            'label'=> 'id',			            'rules' => 'required|is_string|trim|xss_clean'),
 			array('field' => 'id1',		                'label'=> 'id1', 		        'rules' => 'required|is_string|trim|xss_clean'),
-			//array('field' => 'creditos', 	            'label'=> 'creditos', 		        'rules' => 'required|numeric|trim|xss_clean'),
 			array('field' => 'ano', 	                'label'=> 'ano', 		            'rules' => 'required|numeric|trim|xss_clean'),		
-			
 			array('field' => 'semestre', 		        'label'=> 'semestre', 			    'rules' => 'required|xss_clean|validaSelect')
 			),
 	    
