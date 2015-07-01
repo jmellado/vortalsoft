@@ -102,8 +102,7 @@
 																							}
 																			      ?>
 																			
-																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>programas/update/<?php echo $dato->id_programa?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true" href="<?php echo base_url()?>programas/delete/<?php echo $dato->id_programa?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a></td>
-																		</tr>
+																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>programas/update/<?php echo $dato->id_programa?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true"onclick="if(confirmarEliminar() == false) return false" title="Eliminar Programa" 
 																	<?php } ?>
 																</table> 
 

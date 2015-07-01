@@ -97,7 +97,7 @@
 																		<td><?php echo $dato->direccion; ?></td>
 																		<td><?php echo $dato->correo; ?></td>
 																		<td><?php echo $dato->telefono; ?></td>
-																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>profesores/update/<?php echo $dato->id_profesor?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true" href="<?php echo base_url()?>profesores/delete/<?php echo $dato->id_profesor?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a></td>
+																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>profesores/update/<?php echo $dato->id_profesor?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true" onclick="if(confirmarEliminar() == false) return false" title="Eliminar Profesor"  href="<?php echo base_url()?>profesores/delete/<?php echo $dato->id_profesor?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a></td>
 																		</tr>
 																	<?php } ?>
 																</table> 

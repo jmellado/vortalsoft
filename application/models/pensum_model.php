@@ -44,15 +44,17 @@ class Pensum_model extends CI_Model {
 		return $query->row();
 	}
 
+	
 	public function searchPensums($criterio,$valor)
 	{
 		$consulta=array($criterio=>$valor);
-		$query=$this->db
-				->select('*')
-				->from('pensum')
-				->like($consulta)
-				->get();
-		return $query->result();
+		$query = $this->db
+		       ->select('pensum.id_pensum,pensum.id_programa,programas.nom_programa')
+               ->from('pensum')
+               ->join('programas','programas.id_programa = pensum.id_programa')
+               ->like($consulta)
+               ->get();
+        return $query->result();
 	}
 
 	public function updatePensum($datos=array(),$id)
@@ -67,5 +69,24 @@ class Pensum_model extends CI_Model {
 		$this->db->where('id_pensum', $id);
 		$this->db->delete('pensum');
 		return true;
+	}
+
+	public function validarExistenciaPensumId($id)
+	{
+		$consulta=array('id_pensum'=>$id);
+		$query=$this->db
+				->select('*')
+				->from('pensum')
+				->where($consulta)
+				->get();
+			
+		      if ($query->num_rows > 0) 
+		      {
+		          return true;
+	          }else
+	          {
+                  return false;
+	          }
+
 	}
 }

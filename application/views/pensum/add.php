@@ -26,8 +26,8 @@
 
 				      	<div class="row">
 												  <div class="panel panel-default">
-													  <div class="panel-heading">
-													  	 <h1>Gestion Pensum<small>Agregar</small></h1>
+													   <div class="panel-heading">
+													  	 <h1>Gestion Pensum <small>Agregar</small></h1>
 													  </div>
 												  </div>
 									  
@@ -92,34 +92,82 @@
                                                                                </div>
 																		    </div>
 
-														
+																		     <div class="form-group">
+																		        <label class="control-label col-xs-4">Materias (*):</label>
+																		        <div class="col-xs-4">
+                                                                                
+
+																				       <select name="id_materia" id="id_materia"   class="form-control">
+																						 <?php
+																							//obtengo todas de categoria
+																							
+																								foreach($materias as $fila)
+																								{
+																						  ?>
+																							     <option value="<?=$fila -> id_materia ?>"><?=$fila -> nom_materia ?></option>
+																						  <?php
+																							    }
+																					      ?>		
+																						</select>
+
+																		        </div>
+																		        <div class="col-xs-4">
+																		            <span class="help-block"><?php echo form_error('id_materia'); ?></span>
+                                                                               </div>
+																		    </div>
+
+																		    <div class="form-group">
+																		        <label class="control-label col-xs-4">Semestre(*):</label>
+																		        <div class="col-xs-4">
+                                                                                
+
+																				       <select name="semestre" id="semestre"   class="form-control">
+																						  
+																						   <option value="1">1</option>
+																						    <option value="2">2</option>
+																						    <option value="3">3</option>
+																						    <option value="4">4</option>
+																						    <option value="5">5</option>
+																						    <option value="6">6</option>
+																						    <option value="7">7</option>
+																						    <option value="8">8</option>
+																						    <option value="9">9</option>
+																						    <option value="10">10</option>
+																						   
+																					</select>
+
+																		        </div>
+																		        <div class="col-xs-4">
+																		            <span class="help-block"><?php echo form_error('semestre'); ?></span>
+                                                                               </div>
+																		    </div>
 
 
-																		   
+																					<div class="form-group">
+																						        <div class="col-xs-offset-1 col-xs-10">
+																						        	  <div class="alert alert-info">
+																										 <strong>Observaciones!</strong> Los Campos con (*) deben llenarse obligatoriamente
+																						              </div>
+																						        </div>
+																						    </div>
+																						    <div class="form-group">
+																						        <div class="col-xs-offset-4 col-xs-5">
+																						        	  <input type="submit" value="Guardar" title="Guardar nuevo pensum" class="btn btn-success">
+																						       </div>
+																						    </div>
 
-																			    <div class="form-group">
-																			        <div class="col-xs-offset-1 col-xs-10">
-																			        	
-																			        	   
-																						  <div class="alert alert-info">
-																							 <strong>Observaciones!</strong> Los Campos con (*) deben llenarse obligatoriamente
-																			              </div>
-																			        </div>
-																			    </div>
-																			    <div class="form-group">
-																			        <div class="col-xs-offset-4 col-xs-5">
-																			        	  <input type="submit" value="Guardar" title="Guardar nuevo pensum" class="btn btn-success">
-																			       </div>
-																			    </div>
+			                                                                         <?php 
+																		 	         echo form_close();
+																                     ?> 
 
-                                                                         <?php 
-															 	         echo form_close();
-													                     ?>  
-                            </div>
+												
+
+                                        </div>
 
                                                 		  
-								           </div>
+								             </div>
 								</div>
+                                          
 						
                           </div>
 

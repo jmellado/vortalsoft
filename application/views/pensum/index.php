@@ -42,7 +42,7 @@
                                  <?php  // recibir por parametro el nombre del diretorio  y el nav que pedendiendo del rol (rolAdmin,rolCliente,rolVendedor)
 								        $nav= $nave;
 								        $folder_nav= $viewNave;
-								       
+
 								 ?>
 
 									                               <?php 
@@ -52,21 +52,19 @@
 				                                                            	     <label class="control-label">Busqueda por:</label>
 				                                                            	     <select name="criterio" id="criterio"   class="form-control">
 				                                                                          <option value="id_pensum" >Id pensum </option>
-				                                                                          <option value="id_programa" selected >Id Programa</option>
 				                                                            	     </select>
 
 																		 		    <input type="text"  name="valor"  value="<?php echo set_value("valor")?>"  class="form-control" placeholder="Buscar pensum">
-																		 		    <input type="submit" value="Buscar" title="Buscar pensum" class="btn btn-info">
-																		 		  
+																		 		    <input type="submit" value="Buscar" title="Buscar pensum" class="btn btn-info">	 		  
 															    	  <?php 
 																	   echo form_close();
 												                     ?>  
 
 
 								<div class="panel panel-default">
-												   <div class="panel-heading">
+												<div class="panel-heading">
 													    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>pensum/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Nuevo </a>
-													   </div>
+												</div>
 												  <div class="panel-body">  
 
                                                                 <table class="table table-hover">
@@ -81,7 +79,7 @@
 																			<td><?php echo $dato->id_pensum;?></td>
 																			<td><?php echo $dato->id_programa;?></td>
 																			<td><?php echo $dato->nom_programa;?></td>
-																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>pensum/update/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true" href="<?php echo base_url()?>pensum/delete/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a></td>
+																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>pensum/update/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true"  onclick="if(confirmarEliminar() == false) return false" title="Eliminar Pensum" href="<?php echo base_url()?>pensum/delete/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a> <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-list-alt" aria-hidden="true" title="Detalles Pensum" href="<?php echo base_url()?>pensum/detalles/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a>  </td>
 																		</tr>
 																	<?php } ?>
 																</table> 

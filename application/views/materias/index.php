@@ -89,7 +89,7 @@
 																			<td><?php echo $dato->num_creditos;?></td>
 																			<td><?php echo $dato->intensidad_horaria; ?></td>
 																			
-																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>materias/update/<?php echo $dato->id_materia?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true" href="<?php echo base_url()?>materias/delete/<?php echo $dato->id_materia?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a></td>
+																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>materias/update/<?php echo $dato->id_materia?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true" onclick="if(confirmarEliminar() == false) return false" title="Eliminar Materia" href="<?php echo base_url()?>materias/delete/<?php echo $dato->id_materia?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a></td>
 																		</tr>
 																	<?php } ?>
 																</table> 

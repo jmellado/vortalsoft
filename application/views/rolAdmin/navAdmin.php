@@ -31,7 +31,6 @@
                   <li><a href="<?php echo base_url()?>cargas_academicas/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Cargas Academicas</a></li>
                 </ul>
                 </li>
-                <li><a href="<?php echo base_url()?>usuario/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Usuarios</a></li>
             </ul>
         </div>
    </nav>

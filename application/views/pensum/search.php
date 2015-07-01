@@ -28,7 +28,7 @@
 				      	             
 												 <div class="panel panel-default">
 													  <div class="panel-heading">
-													  	 <h1>Gestion Estudiantes <small>Buscar</small></h1>
+													  	 <h1>Gestion Pensum <small>Buscar</small></h1>
 													  </div>
 												  </div>
 									          
@@ -44,58 +44,42 @@
 								        $folder_nav= $viewNave;
 								       
 								 ?>
-                                                          <?php 
+                                                           <?php 
 																		$atributos = array( 'search' => 'form','name'=>'form' ,'class'=>'navbar-form navbar-right' ,'role'=>'search');
-																		echo form_open_multipart('estudiantes/search/'.$folder_nav.'/'.$nav,$atributos);
+																		echo form_open_multipart('pensum/search/'.$folder_nav.'/'.$nav,$atributos);
 																    ?>
 				                                                            	     <label class="control-label">Busqueda por:</label>
 				                                                            	     <select name="criterio" id="criterio"   class="form-control">
-				                                                                          <option value="id_estudiante" >Id</option>
-				                                                                          <option value="nom_estudiante" selected >Nombre</option>
-				                                                                          <option value="ape_estudiante" >Apellidos</option>
-				                                                                          <option value="sexo" >Sexo</option>
-				                                                                          <option value="direccion" >Direccion</option>
-				                                                                          <option value="correo" >Correo</option>
-				                                                                          <option value="telefono" >Telefono</option>
+				                                                                          <option value="id_pensum" >Id pensum </option>
 				                                                            	     </select>
 
-																		 		    <input type="text"  name="valor"  value="<?php echo set_value("valor")?>"  class="form-control" placeholder="Buscar estudiante">
-																		 		    <input type="submit" value="Buscar" title="Buscar estudiantes" class="btn btn-info">
+																		 		    <input type="text"  name="valor"  value="<?php echo set_value("valor")?>"  class="form-control" placeholder="Buscar pensum">
+																		 		    <input type="submit" value="Buscar" title="Buscar pensum" class="btn btn-info">
 																		 		  
 															    	  <?php 
 																	   echo form_close();
 												                     ?>  
-							<div class="panel panel-default">
-												   <div class="panel-heading">
-													    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>estudiantes/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Nuevo </a>
-													   </div>
+
+
+								<div class="panel panel-default">
+												<div class="panel-heading">
+													    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>pensum/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Crear y Agregar Materias  </a>
+												</div>
 												  <div class="panel-body">  
 
                                                                 <table class="table table-hover">
 																	<tr>
-																		<th>Id</th>
-																		<th>Nombre</th>
-																		<th>Apellidos</th>
-																		<th>Sexo</th>
-																		<th>Fecha Nac</th>
-																		<th>Direccion</th>
-																		<th>Correo</th>
-																		<th>Telefono</th>
+																		<th>Id Pensum</th>
+																		<th>Id Programa</th>
+																		<th>Nombre Programa</th>
 																		<th>Acciones</th>
-																		
-																		
 																	</tr>
 																	<?php foreach ($datos as $dato) {?>
 																		<tr>
-																			<td><?php echo $dato->id_estudiante;?></td>
-																			<td><?php echo $dato->nom_estudiante;?></td>
-																			<td><?php echo $dato->ape_estudiante;?></td>
-																			<td><?php echo $dato->sexo; ?></td>
-																			<td><?php echo $dato->fecha_nacimiento; ?></td>
-																			<td><?php echo $dato->direccion; ?></td>
-																			<td><?php echo $dato->correo; ?></td>
-																			<td><?php echo $dato->telefono; ?></td>
-																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>estudiantes/update/<?php echo $dato->id_estudiante?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true" href="<?php echo base_url()?>estudiantes/delete/<?php echo $dato->id_estudiante?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a></td>
+																			<td><?php echo $dato->id_pensum;?></td>
+																			<td><?php echo $dato->id_programa;?></td>
+																			<td><?php echo $dato->nom_programa;?></td>
+																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>pensum/update/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true"  onclick="if(confirmarEliminar() == false) return false" title="Eliminar Pensum" href="<?php echo base_url()?>pensum/delete/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a> <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-list-alt" aria-hidden="true"  title="Detalles Pensum" href="<?php echo base_url()?>pensum/detalles/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a>  </td>
 																		</tr>
 																	<?php } ?>
 																</table> 

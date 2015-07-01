@@ -99,7 +99,7 @@
 																			<td><?php echo $dato->direccion; ?></td>
 																			<td><?php echo $dato->correo; ?></td>
 																			<td><?php echo $dato->telefono; ?></td>
-																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>estudiantes/update/<?php echo $dato->id_estudiante?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true" href="<?php echo base_url()?>estudiantes/delete/<?php echo $dato->id_estudiante?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a></td>
+																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>estudiantes/update/<?php echo $dato->id_estudiante?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true" onclick="if(confirmarEliminar() == false) return false" title="Eliminar Estudiante"  href="<?php echo base_url()?>estudiantes/delete/<?php echo $dato->id_estudiante?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a></td>
 																		</tr>
 																	<?php } ?>
 																</table> 

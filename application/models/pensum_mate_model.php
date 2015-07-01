@@ -9,7 +9,7 @@ class Pensum_mate_model extends CI_Model {
 
 	public function insertPensum_mate($datos=array())
 	{
-		$this->db->insert('pensum_mate', $datos);
+		$this->db->insert('pensum_mat', $datos);
 		return true;
 	}
 
@@ -17,7 +17,7 @@ class Pensum_mate_model extends CI_Model {
 	{
 		$query=$this->db
 				->select('*')
-				->from('Pensum_mate')
+				->from('Pensum_mat')
 				->get();
 		return $query->result();
 	}
@@ -27,10 +27,24 @@ class Pensum_mate_model extends CI_Model {
 		$consulta=array('id_pensum'=>$id);
 		$query=$this->db
 				->select('*')
-				->from('Pensum_mate')
+				->from('Pensum_mat')
 				->where($consulta)
 				->get();
 		return $query->row();
+	}
+
+	public function getPensum_mateJoin($id_pensum,$semestre)
+	{
+		$consulta=array('id_pensum'=>$id_pensum,
+                        'semestre'=>$semestre
+			           );
+		$query = $this->db
+		       ->select('materias.id_materia,materias.nom_materia,materias.num_creditos,materias.intensidad_horaria')
+               ->from('materias')
+               ->join('Pensum_mat','pensum_mat.id_materia = materias.id_materia')
+               ->where($consulta)
+               ->get();
+        return $query->result();
 	}
 
 	public function searchPensum_mates($criterio,$valor)
@@ -38,7 +52,7 @@ class Pensum_mate_model extends CI_Model {
 		$consulta=array($criterio=>$valor);
 		$query=$this->db
 				->select('*')
-				->from('Pensum_mate')
+				->from('pensum_mat')
 				->like($consulta)
 				->get();
 		return $query->result();
@@ -47,14 +61,14 @@ class Pensum_mate_model extends CI_Model {
 	public function updatePensum_mate($datos=array(),$id)
 	{
 		$this->db->where('id_pensum', $id);
-		$this->db->update('Pensum_mate', $datos);
+		$this->db->update('pensum_mat', $datos);
 		return true;
 	}
 
 	public function deletePensum_mate($id)
 	{
 		$this->db->where('id_pensum', $id);
-		$this->db->delete('Pensum_mate');
+		$this->db->delete('pensum_mat');
 		return true;
 	}
 }

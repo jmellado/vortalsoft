@@ -21,6 +21,7 @@
 					           <h4>Contactanos</h4>
 		            </div>
 		            <div class="col-xs-6 col-sm-3 placeholder text-center">
+		            	
 					           <a href="<?php echo base_url()?>login">  <img src="<?=base_url()?>/utilities/img/home_login.png"  class="center-block img-responsive img-circule" alt="Generic placeholder circule">
 					           </a>  
 					            <h4>Inicio Session</h4>
