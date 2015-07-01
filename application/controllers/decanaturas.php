@@ -38,6 +38,15 @@ class Decanaturas extends CI_Controller {
 					'jefe_decanatura'      =>$this->input->post("jefe_decanatura")
 				        	);
 
+                     $id = $this->input->post("id_decanatura");
+                     $validar= $this->personal_model->validarExistenciaDecanaturaId($id);
+
+                    if ($validar == true) {
+							$this->session->set_flashdata('ControllerMessage','Decanatura registrado anteriormente, verifique el codigo e intentelo nuevamente');
+							redirect(base_url().'profesores/add/'.$folder_nav.'/'.$nav,301);
+				    } else 
+				    {
+
 				$consulta= $this->decanaturas_model->insertDecanaturas($datos);
 				
 				if ($consulta == true) {
@@ -48,6 +57,7 @@ class Decanaturas extends CI_Controller {
 					$this->session->set_flashdata('ControllerMessage','Se ha Producido un Error Intentelo Nuevamente');
 					redirect(base_url().'decanaturas/add/'.$folder_nav.'/'.$nav,301);
 				}
+			}
 	
 	    	}
 
