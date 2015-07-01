@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-07-2015 a las 03:14:13
+-- Tiempo de generación: 01-07-2015 a las 16:30:35
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -34,6 +34,15 @@ CREATE TABLE IF NOT EXISTS `carga_academica` (
   KEY `fk_profesores_has_materias_materias1_idx` (`id_materia`),
   KEY `fk_profesores_has_materias_profesores1_idx` (`id_profesor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `carga_academica`
+--
+
+INSERT INTO `carga_academica` (`id_profesor`, `id_materia`, `año`, `semestre`) VALUES
+('12', '13', '4', '2'),
+('12', '13', '4', '2'),
+('12', '12', '1768', '1');
 
 -- --------------------------------------------------------
 
@@ -79,6 +88,14 @@ CREATE TABLE IF NOT EXISTS `materias` (
   `intensidad_horaria` varchar(45) NOT NULL,
   PRIMARY KEY (`id_materia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `materias`
+--
+
+INSERT INTO `materias` (`id_materia`, `nom_materia`, `num_creditos`, `intensidad_horaria`) VALUES
+('12', 'mate', '2', '2'),
+('13', 'quimica', '2', '3');
 
 -- --------------------------------------------------------
 
@@ -126,10 +143,10 @@ CREATE TABLE IF NOT EXISTS `pensum` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pensum_materias`
+-- Estructura de tabla para la tabla `pensum_mat`
 --
 
-CREATE TABLE IF NOT EXISTS `pensum_materias` (
+CREATE TABLE IF NOT EXISTS `pensum_mat` (
   `id_pensum` varchar(20) NOT NULL,
   `id_materia` varchar(20) NOT NULL,
   `semestre` varchar(45) NOT NULL,
@@ -154,7 +171,8 @@ CREATE TABLE IF NOT EXISTS `personal` (
 --
 
 INSERT INTO `personal` (`id_personal`, `rol`) VALUES
-('1065', 'Administrador');
+('1065', 'Administrador'),
+('12', 'Profesor');
 
 -- --------------------------------------------------------
 
@@ -173,6 +191,13 @@ CREATE TABLE IF NOT EXISTS `profesores` (
   `telefono` varchar(45) NOT NULL,
   PRIMARY KEY (`id_profesor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `profesores`
+--
+
+INSERT INTO `profesores` (`id_profesor`, `nom_profesor`, `ape_profesor`, `sexo`, `fecha_nacimiento`, `direccion`, `correo`, `telefono`) VALUES
+('12', 'jeiner', 'mellado', 'm', '2015-06-18', 'calle 4', 'jeiner@hotmail.com', '121212');
 
 -- --------------------------------------------------------
 
@@ -223,9 +248,11 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `rol`, `user`, `pass`, `acceso`, `id_personal`) VALUES
+('', 'Profesor', 'jeiner', '7b52009b64fd0a2a49e6d8a939753077792b0554', '1', '12'),
 ('1', 'Administrador', 'Amiguel', '8cb2237d0679ca88db6464eac60da96345513964', '1', '1065'),
 ('2', 'Estudiante', 'Emigue', '8cb2237d0679ca88db6464eac60da96345513964', '1', '1065'),
-('3', 'Profesor', 'Pmiguel', '8cb2237d0679ca88db6464eac60da96345513964', '1', '1065');
+('3', 'Profesor', 'Pmiguel', '8cb2237d0679ca88db6464eac60da96345513964', '1', '1065'),
+('6', 'Estudiante', 'Ejeiner', '8cb2237d0679ca88db6464eac60da96345513964', '1', '1065');
 
 --
 -- Restricciones para tablas volcadas
@@ -235,8 +262,8 @@ INSERT INTO `usuarios` (`id_usuario`, `rol`, `user`, `pass`, `acceso`, `id_perso
 -- Filtros para la tabla `carga_academica`
 --
 ALTER TABLE `carga_academica`
-  ADD CONSTRAINT `fk_profesores_has_materias_profesores1` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_profesores_has_materias_materias1` FOREIGN KEY (`id_materia`) REFERENCES `materias` (`id_materia`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_profesores_has_materias_materias1` FOREIGN KEY (`id_materia`) REFERENCES `materias` (`id_materia`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_profesores_has_materias_profesores1` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `matricula`
@@ -258,11 +285,11 @@ ALTER TABLE `pensum`
   ADD CONSTRAINT `fk_pensum_programas1` FOREIGN KEY (`id_programa`) REFERENCES `programas` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `pensum_materias`
+-- Filtros para la tabla `pensum_mat`
 --
-ALTER TABLE `pensum_materias`
-  ADD CONSTRAINT `fk_pensum_has_materias_pensum1` FOREIGN KEY (`id_pensum`) REFERENCES `pensum` (`id_pensum`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_pensum_has_materias_materias1` FOREIGN KEY (`id_materia`) REFERENCES `materias` (`id_materia`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `pensum_mat`
+  ADD CONSTRAINT `fk_pensum_has_materias_materias1` FOREIGN KEY (`id_materia`) REFERENCES `materias` (`id_materia`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_pensum_has_materias_pensum1` FOREIGN KEY (`id_pensum`) REFERENCES `pensum` (`id_pensum`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `programas`
