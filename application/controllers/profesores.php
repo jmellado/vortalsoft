@@ -8,6 +8,7 @@ class Profesores extends CI_Controller {
 		$this->load->model('profesores_model');
 		$this->load->model('personal_model');
 		$this->load->model('usuarios_model');
+		$this->load->model('cargasacademicas_model');
 	}
 
 	public function index($folder_nav=null,$nav=null)
@@ -148,12 +149,14 @@ class Profesores extends CI_Controller {
 
 	public function delete($id=null,$folder_nav=null,$nav=null)
 	{
+		$consulta_carga= $this->cargasacademicas_model->deleteCargas($id);
 		$consulta_usuarios= $this->usuarios_model->deleteUsuario($id);
 		$consulta_personal= $this->personal_model->deletePersona($id);
 		$consulta_profesores= $this->profesores_model->deleteProfesores($id);
+		
 
 				
-		if ($consulta_profesores == true && $consulta_personal == true && $consulta_profesores == true) {
+		if ($consulta_profesores == true && $consulta_personal == true && $consulta_profesores == true && $consulta_carga== true) {
 			$this->session->set_flashdata('ControllerMessage','Se Ha Eliminado Correctamente');
 			redirect(base_url().'profesores/index/'.$folder_nav.'/'.$nav,301);
 		} else {
