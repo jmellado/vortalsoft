@@ -57,4 +57,23 @@ class Decanaturas_model extends CI_Model {
 		$this->db->delete('decanaturas');
 		return true;
 	}
+
+		public function validarExistenciaDecanaturaId($id)
+	{
+		$consulta=array('id_decanatura'=>$id);
+		$query=$this->db
+				->select('*')
+				->from('decanaturas')
+				->where($consulta)
+				->get();
+			
+		      if ($query->num_rows > 0) 
+		      {
+		          return true;
+	          }else
+	          {
+                  return false;
+	          }
+
+	}
 }

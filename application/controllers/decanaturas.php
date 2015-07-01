@@ -39,11 +39,11 @@ class Decanaturas extends CI_Controller {
 				        	);
 
                      $id = $this->input->post("id_decanatura");
-                     $validar= $this->personal_model->validarExistenciaDecanaturaId($id);
+                     $validar= $this->decanaturas_model->validarExistenciaDecanaturaId($id);
 
                     if ($validar == true) {
 							$this->session->set_flashdata('ControllerMessage','Decanatura registrado anteriormente, verifique el codigo e intentelo nuevamente');
-							redirect(base_url().'profesores/add/'.$folder_nav.'/'.$nav,301);
+							redirect(base_url().'decanaturas/add/'.$folder_nav.'/'.$nav,301);
 				    } else 
 				    {
 
