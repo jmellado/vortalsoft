@@ -30,7 +30,7 @@
 													  </div>
 												  </div>
 									  
-											  
+								<!--gestion carags academicas-->			  
 
 								<div class="panel panel-default">
 									      <div class="panel-heading">
