@@ -60,6 +60,106 @@ class Pensum extends CI_Controller {
 				$this->form_validation->set_message('max_length', 'Campo  debe tener un Maximo de %d Caracteres');
 				$this->form_validation->set_error_delimiters('<span>','</span>');
 
+		if ($this->form_validation->run('vali_Pensum_varios')) { //ejecuto el archivo de form_validation
+				
+				
+				 $datos_pemsum =array(
+					'id_pensum'        =>$this->input->post("id_pensum"),
+					'id_programa'      =>$this->input->post("id_programa")
+					
+					         );
+
+                     $id = $this->input->post("id_pensum");
+                     $validar= $this->pensum_model->validarExistenciaPensumId($id);
+                     
+                     if ($validar == true) {
+
+									for ($i=1; $i < 10 ; $i++) { 
+								     		$materias_sele = $this->input->post("semestre".$i);
+
+										    foreach ($materias_sele as $mate) {
+
+										    	 $datos_pensum_mate=array(
+																		'id_pensum'       =>$this->input->post("id_pensum"),
+																		'id_materia'      =>$mate,
+																		'semestre'        =>$i 	
+																		);
+						                      $consulta_pensum_mate = $this->pensum_mate_model->insertPensum_mate($datos_pensum_mate);
+										    }
+								    }
+
+						
+						if ( $consulta_pensum_mate  == true) 
+						{
+							$this->session->set_flashdata('ControllerMessage','Se Ha Guardado Correctamente');
+							redirect(base_url().'pensum/add/'.$folder_nav.'/'.$nav,301);
+							
+						} else {
+							$this->session->set_flashdata('ControllerMessage','Se ha Producido un Error Intentelo Nuevamente 1');
+							redirect(base_url().'pensum/add/'.$folder_nav.'/'.$nav,301);
+						}		
+				    } 
+				    else 
+				    {
+
+				    	$consulta_pensum = $this->pensum_model->insertPensum($datos_pemsum);
+									
+							  for ($i=1; $i < 10 ; $i++) { 
+								     		$materias_sele = $this->input->post("semestre".$i);
+
+										    foreach ($materias_sele as $mate) {
+
+										    	 $datos_pensum_mate=array(
+																		'id_pensum'       =>$this->input->post("id_pensum"),
+																		'id_materia'      =>$mate,
+																		'semestre'        =>$i 	
+																		);
+						                      $consulta_pensum_mate = $this->pensum_mate_model->insertPensum_mate($datos_pensum_mate);
+										    }
+								    }
+
+						
+						if ($consulta_pensum == true && $consulta_pensum_mate  == true) 
+						{
+							$this->session->set_flashdata('ControllerMessage','Se Ha Guardado Correctamente');
+							redirect(base_url().'pensum/add/'.$folder_nav.'/'.$nav,301);
+							
+						} else {
+							$this->session->set_flashdata('ControllerMessage','Se ha Producido un Error Intentelo Nuevamente 2 ');
+							redirect(base_url().'pensum/add/'.$folder_nav.'/'.$nav,301);
+						}
+
+
+	    	        }
+
+		  }
+	    }
+	    
+		$data['titulo']				=               'Vortalsoft';
+		$data['viewControlador']	=		            'pensum';
+		$data['viewNave']	        =                $folder_nav;
+		$data['nave']		    	=		                $nav;
+		$data['contenido']			=		               'add';	
+		$data['programas']		    =		$this->programas_model->getProgramas();
+		$data['datos']		        =		$this->materias_model->getMaterias();
+
+		$this->load->view('masterPage/masterPage', $data, FALSE);
+	}
+
+
+	public function add_individual($folder_nav=null,$nav=null)
+	{
+		
+		if ($this->input->post()) { //pregunto si me llegaron datos del formulario
+			
+              
+			    $this->form_validation->set_message('required', 'campo  obligatorio');
+				$this->form_validation->set_message('integer', 'Campo debe poseer solo numeros');
+				$this->form_validation->set_message('numeric', 'Campo  debe poseer solo numeros');
+				$this->form_validation->set_message('is_unique', 'Campo ya registrado');
+				$this->form_validation->set_message('max_length', 'Campo  debe tener un Maximo de %d Caracteres');
+				$this->form_validation->set_error_delimiters('<span>','</span>');
+
 		if ($this->form_validation->run('vali_Pensum')) { //ejecuto el archivo de form_validation
 				
 				
@@ -86,13 +186,12 @@ class Pensum extends CI_Controller {
 						if ( $consulta_pensum_mate  == true) 
 						{
 							$this->session->set_flashdata('ControllerMessage','Se Ha Guardado Correctamente');
-							redirect(base_url().'pensum/add/'.$folder_nav.'/'.$nav,301);
+							redirect(base_url().'pensum/add_individual/'.$folder_nav.'/'.$nav,301);
 							
 						} else {
 							$this->session->set_flashdata('ControllerMessage','Se ha Producido un Error Intentelo Nuevamente');
-							redirect(base_url().'pensum/add/'.$folder_nav.'/'.$nav,301);
-						}
-							
+							redirect(base_url().'pensum/add_individual/'.$folder_nav.'/'.$nav,301);
+						}		
 				    } 
 				    else 
 				    {
@@ -102,11 +201,11 @@ class Pensum extends CI_Controller {
 						if ($consulta_pensum == true && $consulta_pensum_mate  == true) 
 						{
 							$this->session->set_flashdata('ControllerMessage','Se Ha Guardado Correctamente');
-							redirect(base_url().'pensum/add/'.$folder_nav.'/'.$nav,301);
+							redirect(base_url().'pensum/add_individual/'.$folder_nav.'/'.$nav,301);
 							
 						} else {
 							$this->session->set_flashdata('ControllerMessage','Se ha Producido un Error Intentelo Nuevamente');
-							redirect(base_url().'pensum/add/'.$folder_nav.'/'.$nav,301);
+							redirect(base_url().'pensum/add_individual/'.$folder_nav.'/'.$nav,301);
 						}
 
 
@@ -119,7 +218,7 @@ class Pensum extends CI_Controller {
 		$data['viewControlador']	=		            'pensum';
 		$data['viewNave']	        =                $folder_nav;
 		$data['nave']		    	=		                $nav;
-		$data['contenido']			=		               'add';	
+		$data['contenido']			=		    'add_individual';	
 		$data['programas']		    =		$this->programas_model->getProgramas();
 		$data['materias']		    =		$this->materias_model->getMaterias();
 
@@ -179,13 +278,10 @@ class Pensum extends CI_Controller {
 
 	public function delete($id=null,$folder_nav=null,$nav=null)
 	{
-		
-		$consulta_pensum= $this->pensum_model->deletePensum($id);
 		$consulta_pensum_mate= $this->pensum_mate_model->deletePensum_mate($id);
-		
-
+		$consulta_pensum= $this->pensum_model->deletePensum($id);
 				
-		if ($consulta_usuarios == true && $consulta_personal == true) {
+		if ($consulta_pensum_mate == true && $consulta_pensum == true) {
 			$this->session->set_flashdata('ControllerMessage','Se ha Eliminado Correctamente');
 			redirect(base_url().'pensum/index/'.$folder_nav.'/'.$nav,301);
 		} else {

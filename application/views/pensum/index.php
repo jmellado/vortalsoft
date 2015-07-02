@@ -63,7 +63,7 @@
 
 								<div class="panel panel-default">
 												<div class="panel-heading">
-													    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>pensum/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Nuevo </a>
+													    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>pensum/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Materias </a>    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>pensum/add_individual/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Materia</a>
 												</div>
 												  <div class="panel-body">  
 

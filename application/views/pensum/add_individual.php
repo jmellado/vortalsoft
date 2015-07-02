@@ -92,38 +92,55 @@
                                                                                </div>
 																		    </div>
 
-                                                                            <?php   for ($i=1; $i < 10; $i++)  { ?>
+																		     <div class="form-group">
+																		        <label class="control-label col-xs-4">Materias (*):</label>
+																		        <div class="col-xs-4">
+                                                                                
 
-                                                                                  <div class="panel panel-default">
-																			       <?php $semestre =$i;?>
-								                                                   <div class="panel-heading">
-																					   <large> Semestre <?php echo $semestre;?></large>  
-																				   </div>
-																			  <div class="panel-body">  
+																				       <select name="id_materia" id="id_materia"   class="form-control">
+																						 <?php
+																							//obtengo todas de categoria
+																							
+																								foreach($materias as $fila)
+																								{
+																						  ?>
+																							     <option value="<?=$fila -> id_materia ?>"><?=$fila -> nom_materia ?></option>
+																						  <?php
+																							    }
+																					      ?>		
+																						</select>
 
-							                                                                <table class="table table-hover">
-																								<tr>
-																									<th>Id</th>
-																									<th>Nombre</th>
-																									<th>Creditos</th>
-																									<th>Horas</th>
-																									<th>Agregar a Pensum</th>
-																								</tr>
-																								<?php foreach ($datos as $dato) {?>
-																									<tr>
-																										<td><?php echo $dato->id_materia;?></td>
-																										<td><?php echo $dato->nom_materia;?></td>
-																										<td><?php echo $dato->num_creditos;?></td>
-																										<td><?php echo $dato->intensidad_horaria; ?></td>
-																										<td><input type="checkbox" name="semestre<?php echo $semestre?>[]" value="<?php echo $dato->id_materia;?>"></input></td>
-																									</tr>
-																								<?php } ?>
-																							</table> 
-                                                                                </div>
-							                                         	   </div>
+																		        </div>
+																		        <div class="col-xs-4">
+																		            <span class="help-block"><?php echo form_error('id_materia'); ?></span>
+                                                                               </div>
+																		    </div>
 
-                                                                            <?php }?>
-																		  
+																		    <div class="form-group">
+																		        <label class="control-label col-xs-4">Semestre(*):</label>
+																		        <div class="col-xs-4">
+                                                                                
+
+																				       <select name="semestre" id="semestre"   class="form-control">
+																						  
+																						   <option value="1">1</option>
+																						    <option value="2">2</option>
+																						    <option value="3">3</option>
+																						    <option value="4">4</option>
+																						    <option value="5">5</option>
+																						    <option value="6">6</option>
+																						    <option value="7">7</option>
+																						    <option value="8">8</option>
+																						    <option value="9">9</option>
+																						    <option value="10">10</option>
+																						   
+																					</select>
+
+																		        </div>
+																		        <div class="col-xs-4">
+																		            <span class="help-block"><?php echo form_error('semestre'); ?></span>
+                                                                               </div>
+																		    </div>
 
 
 																					<div class="form-group">

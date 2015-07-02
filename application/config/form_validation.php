@@ -49,7 +49,12 @@ $config = array(
 			array('field' => 'creditos', 		                'label'=> 'creditos', 			    'rules' => 'required|xss_clean|validaSelect')
 			),
 
-	      'vali_Pensum'	=>	array(
+	      'vali_Pensum_varios'	=>	array(
+			array('field' => 'id_pensum',			            'label'=> 'id_pensum',			           'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'id_programa',		                'label'=> 'id_programa', 		           'rules' => 'required|is_string|trim|xss_clean')
+	        ),
+
+	       'vali_Pensum'	=>	array(
 			array('field' => 'id_pensum',			            'label'=> 'id_pensum',			           'rules' => 'required|is_string|trim|xss_clean'),
 			array('field' => 'id_programa',		                'label'=> 'id_programa', 		           'rules' => 'required|is_string|trim|xss_clean'),
 			array('field' => 'id_materia',		                'label'=> 'id_materia', 		           'rules' => 'required|is_string|trim|xss_clean'),
