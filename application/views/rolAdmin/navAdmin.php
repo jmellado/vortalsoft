@@ -18,12 +18,19 @@
 
             <ul class="nav navbar-nav ">
 				<li class="active"><a href="<?php echo base_url()?>admin">Inicio</a></li>				
-                <li><a href="<?php echo base_url()?>estudiantes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Estudiantes</a></li>
+                
+                 <li class      ="dropdown">
+                <a data-toggle ="dropdown" class="dropdown-toggle" href="#">Estudiantes<b class="caret"></b></a>
+                <ul role       ="menu" class="dropdown-menu">
+                  <li><a href="<?php echo base_url()?>estudiantes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Gestion Estudiante</a></li>
+                  <li><a href="<?php echo base_url()?>matri_estudiante/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Matricula Estudiante</a></li>
+                </ul>
+                </li>
                 <li><a href="<?php echo base_url()?>profesores/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Profesores</a></li>
                 <li><a href="<?php echo base_url()?>decanaturas/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Decanaturas</a></li>
                <li><a href="<?php echo base_url()?>materias/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Materias</a></li>
             
-				<li class      ="dropdown">
+				     <li class      ="dropdown">
                 <a data-toggle ="dropdown" class="dropdown-toggle" href="#">Programas<b class="caret"></b></a>
                 <ul role       ="menu" class="dropdown-menu">
                   <li><a href="<?php echo base_url()?>programas/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Programas</a></li>
