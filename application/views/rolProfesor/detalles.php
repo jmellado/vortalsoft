@@ -72,7 +72,7 @@
 								<?php $semestre = $this->session->userdata('id_personal');?>
 								
 												   <div class="panel-heading">
-													    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>cargas_academicas/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Nuevo </a>
+													   <!-- <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>cargas_academicas/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Nuevo </a>-->
 													   </div>
 												  <div class="panel-body">  
 
