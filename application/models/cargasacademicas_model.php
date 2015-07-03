@@ -22,15 +22,27 @@ class Cargasacademicas_model extends CI_Model {
 		return $query->result();
 	}
 
-	public function getCargasId($id_personal)
+	public function getCargasId($id)
 	{
-		$consulta=array('id_profesor'=>$id_personal);
+		$consulta=array('id_profesor'=>$id);
 		$query=$this->db
 				->select('*')
 				->from('carga_academica')
 				->where($consulta)
 				->get();
-		return $query->row();
+		return $query->result();  //result  row
+	}
+
+	public function getCargasJoin($id)
+	{
+		$consulta=array('id_profesor'=>$id);
+		$query = $this->db
+		       ->select('carga_academica.id_profesor,materias.nom_materia,carga_academica.año,carga_academica.semestre')
+               ->from('carga_academica')
+               ->join('materias','materias.id_materia = carga_academica.id_materia')
+               ->where($consulta)
+               ->get();
+        return $query->result();
 	}
 
 	public function updateCargas($datos=array(),$id,$id1)

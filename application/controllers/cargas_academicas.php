@@ -147,7 +147,7 @@ class Cargas_academicas extends CI_Controller {
 	}
 
 	
-	public function detalles($id_personal=null,$folder_nav=null,$nav=null)
+	public function detalles($id=null,$folder_nav=null,$nav=null)
 	{
 		
 		$data['titulo']				=               'Vortalsoft';
@@ -155,7 +155,7 @@ class Cargas_academicas extends CI_Controller {
 		$data['viewNave']	        =                $folder_nav;
 		$data['nave']		    	=		                $nav;
 		$data['contenido']			=		          'detalles';	
-		$data['datos']				=		$this->cargasacademicas_model->getCargas();
+		$data['datos']				=		$this->cargasacademicas_model->getCargasJoin($id);
 		$this->load->view('masterPage/masterPage', $data);
 	}
 

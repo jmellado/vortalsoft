@@ -50,7 +50,7 @@
 																		$atributos = array( 'search' => 'form','name'=>'form' ,'class'=>'navbar-form navbar-right' ,'role'=>'search');
 																		echo form_open_multipart('cargas_academicas/search/'.$folder_nav.'/'.$nav,$atributos);
 																    ?>
-				                                                            	     <label class="control-label">Busqueda por:</label>
+				                                                            	   <!--  <label class="control-label">Busqueda por:</label>
 				                                                            	     <select name="criterio" id="criterio"   class="form-control">
 				                                                                          <option value="id_materia" >Id materia</option>
 				                                                                          <option value="id_profesor" >Id profesor</option>
@@ -61,7 +61,7 @@
 				                                                            	     </select>
 
 																		 		    <input type="text"  name="valor"  value="<?php echo set_value("valor")?>"  class="form-control" placeholder="Buscar materia">
-																		 		    <input type="submit" value="Buscar" title="Buscar materias" class="btn btn-info">
+																		 		    <input type="submit" value="Buscar" title="Buscar materias" class="btn btn-info">-->
 																		 		  
 															    	  <?php 
 																	   echo form_close();
@@ -79,7 +79,7 @@
                                                                 <table class="table table-hover">
 																	<tr>
 																		<th>Id Profesor</th>
-																		<th>Id Materia</th>
+																		<th>Materia</th>
 																		<th>Año</th>
 																		<th>Semestre</th>
 																		
@@ -89,7 +89,7 @@
 																	<?php foreach ($datos as $dato) {?>
 																		<tr>
 																			<td><?php echo $dato->id_profesor;?></td>
-																			<td><?php echo $dato->id_materia;?></td>
+																			<td><?php echo $dato->nom_materia;?></td>
 																			<td><?php echo $dato->año;?></td>
 																			<td><?php echo $dato->semestre; ?></td>
 																			

@@ -22,7 +22,7 @@
         				<li class="active"><a href="<?php echo base_url()?>profesor">Inicio</a></li>
         				<li><a href="###">Seguimiento</a></li>
                         <li><a href="<?php echo base_url()?>cargas_academicas/index.php">Horario</a></li>
-                        <li><a href="<?php echo base_url()?>cargas_academicas/detalles/<?php echo $id_personal?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Cargas Academicas</a></li>
+                        <li><a href="<?php echo base_url()?>cargas_academicas/detalles/<?php echo $id_personal?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Carga Academica</a></li>
                         <li><a href="###">Reportes</a></li>
         			    <li><a href="#">Academia</a></li> 
                         <li class      ="dropdown">
