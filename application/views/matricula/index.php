@@ -52,8 +52,6 @@
 				                                                            	     <label class="control-label">Busqueda por:</label>
 				                                                            	     <select name="criterio" id="criterio"   class="form-control">
 				                                                                          <option value="id_matricula" >Id Matricula </option>
-				                                                                          <option value="id_matricula" >Id Programa </option>
-				                                                                          <option value="id_matricula" >Id Estudiante </option>
 				                                                            	     </select>
 
 																		 		    <input type="text"  name="valor"  value="<?php echo set_value("valor")?>"  class="form-control" placeholder="Buscar matricula">

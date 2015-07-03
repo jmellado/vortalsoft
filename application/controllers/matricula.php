@@ -150,7 +150,7 @@ public function add($folder_nav=null,$nav=null)
 		$data['viewNave']	          =                     $folder_nav;
 		$data['nave']		    	  =		                       $nav;
 		$data['contenido']			  =		                   'search';
-		$data['datos']				  =		$this->matricula_model->searchMatricula($criterio,$valor);
+		$data['datos']				  =		$this->matricula_model->searchMatriculas($criterio,$valor);
       
 		$this->load->view('masterPage/masterPage', $data);
 		

@@ -49,11 +49,14 @@ class Matricula_model extends CI_Model {
 	public function searchMatriculas($criterio,$valor)
 	{
 		$consulta=array($criterio=>$valor);
-		$query=$this->db
-				->select('*')
-				->from('matricula')
-				->like($consulta)
-				->get();
+		$query = $this->db
+		       ->select('matricula.id_matricula,matricula.id_estudiante,estudiantes.nom_estudiante,matricula.id_programa,programas.nom_programa')
+               ->from('matricula')
+               ->join('programas','programas.id_programa = matricula.id_programa')
+               ->join('estudiantes','estudiantes.id_estudiante = matricula.id_estudiante')
+               ->like($consulta)
+			   ->get();
+               
 		return $query->result();
 	}
 
