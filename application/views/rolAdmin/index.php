@@ -26,7 +26,7 @@
 				      </div>
 				      <div class="col-md-9">
 				                 <h1 style="text-align: center">Bienvenido de nuevo <?=$this->session->userdata('perfil')?></h1>
-				      </div>
+				      </div>    
                 </div>
 		
 				

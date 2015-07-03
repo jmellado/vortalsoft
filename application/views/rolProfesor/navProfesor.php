@@ -10,12 +10,21 @@
                    
                 </div>
                 <div id="navbarCollapse" class="collapse navbar-collapse nav-justified">
+
+
+                <?php 
+                    $nav='navProfesor';
+                    $folder_nav='rolProfesor';
+                    $id_personal= $this->session->userdata('id_personal');
+                    
+              ?>
                     <ul class="nav navbar-nav ">
-        				<li class="active"><a href="<?php echo base_url()?>docente">Inicio</a></li>
+        				<li class="active"><a href="<?php echo base_url()?>profesor">Inicio</a></li>
         				<li><a href="###">Seguimiento</a></li>
-                        <li><a href="<?php echo base_url()?>productos">Productos</a></li>
-                        <li><a href="###">Pedidos</a></li>
-        			    <li><a href="#">Servicio al Cliente</a></li> 
+                        <li><a href="<?php echo base_url()?>cargas_academicas/index.php">Horario</a></li>
+                        <li><a href="<?php echo base_url()?>cargas_academicas/detalles/<?php echo $id_personal?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Cargas Academicas</a></li>
+                        <li><a href="###">Reportes</a></li>
+        			    <li><a href="#">Academia</a></li> 
                         <li class      ="dropdown">
                         <a data-toggle ="dropdown" class="dropdown-toggle" href="#">Acerca de <b class="caret"></b></a>
                         <ul role       ="menu" class="dropdown-menu">

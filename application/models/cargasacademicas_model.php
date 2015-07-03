@@ -22,9 +22,9 @@ class Cargasacademicas_model extends CI_Model {
 		return $query->result();
 	}
 
-	public function getCargasId($id)
+	public function getCargasId($id_personal)
 	{
-		$consulta=array('id_profesor'=>$id);
+		$consulta=array('id_profesor'=>$id_personal);
 		$query=$this->db
 				->select('*')
 				->from('carga_academica')

@@ -12,7 +12,8 @@
 										     <label> Rol :</label> 
 										      <input type="text" class="form-control" disabled value='<?=$this->session->userdata('rol')?>'></input>  
 										     <label> Usuario :</label> 
-										     <input type="text" class="form-control" disabled value='<?=$this->session->userdata('user')?>'></input>  
+										     <input type="text" class="form-control" disabled value='<?=$this->session->userdata('user')?>'></input> 
+										     <input type="hidden" class="form-control" disabled value='<?=$this->session->userdata('id_personal')?>'></input> 
 										  </div>
 								      <hr> </hr>
 								      <?=anchor(base_url().'login/logout_ci', 'Cerrar sesión')?>					   
