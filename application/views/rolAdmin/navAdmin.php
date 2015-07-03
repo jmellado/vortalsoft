@@ -23,7 +23,7 @@
                 <a data-toggle ="dropdown" class="dropdown-toggle" href="#">Estudiantes<b class="caret"></b></a>
                 <ul role       ="menu" class="dropdown-menu">
                   <li><a href="<?php echo base_url()?>estudiantes/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Gestion Estudiante</a></li>
-                  <li><a href="<?php echo base_url()?>matri_estudiante/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Matricula Estudiante</a></li>
+                  <li><a href="<?php echo base_url()?>matricula/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Matricula Estudiante</a></li>
                 </ul>
                 </li>
                 <li><a href="<?php echo base_url()?>profesores/index/<?php echo  $folder_nav;?>/<?php echo  $nav;?>">Profesores</a></li>

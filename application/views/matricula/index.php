@@ -28,7 +28,7 @@
 				      	             
 												 <div class="panel panel-default">
 													  <div class="panel-heading">
-													  	 <h1>Gestion Pensum <small></small></h1>
+													  	 <h1>Gestion Matricula <small></small></h1>
 													  </div>
 												  </div>
 									          
@@ -47,15 +47,17 @@
 
 									                               <?php 
 																		$atributos = array( 'search' => 'form','name'=>'form' ,'class'=>'navbar-form navbar-right' ,'role'=>'search');
-																		echo form_open_multipart('pensum/search/'.$folder_nav.'/'.$nav,$atributos);
+																		echo form_open_multipart('matricula/search/'.$folder_nav.'/'.$nav,$atributos);
 																    ?>
 				                                                            	     <label class="control-label">Busqueda por:</label>
 				                                                            	     <select name="criterio" id="criterio"   class="form-control">
-				                                                                          <option value="id_pensum" >Id pensum </option>
+				                                                                          <option value="id_matricula" >Id Matricula </option>
+				                                                                          <option value="id_matricula" >Id Programa </option>
+				                                                                          <option value="id_matricula" >Id Estudiante </option>
 				                                                            	     </select>
 
-																		 		    <input type="text"  name="valor"  value="<?php echo set_value("valor")?>"  class="form-control" placeholder="Buscar pensum">
-																		 		    <input type="submit" value="Buscar" title="Buscar pensum" class="btn btn-info">	 		  
+																		 		    <input type="text"  name="valor"  value="<?php echo set_value("valor")?>"  class="form-control" placeholder="Buscar matricula">
+																		 		    <input type="submit" value="Buscar" title="Buscar matricula" class="btn btn-info">	 		  
 															    	  <?php 
 																	   echo form_close();
 												                     ?>  
@@ -63,23 +65,27 @@
 
 								<div class="panel panel-default">
 												<div class="panel-heading">
-													    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>pensum/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Materias </a>    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>pensum/add_individual/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Materia</a>
+													    <a class="glyphicon glyphicon-plus-sign " aria-hidden="true" href="<?php echo base_url()?>matricula/add/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"> Matricula </a>   
 												</div>
 												  <div class="panel-body">  
 
                                                                 <table class="table table-hover">
 																	<tr>
-																		<th>Id Pensum</th>
+																		<th>Id Matricula</th>
 																		<th>Id Programa</th>
 																		<th>Nombre Programa</th>
+																		<th>Id Estudiante</th>
+																		<th>Nombre Estudiante</th>
 																		<th>Acciones</th>
 																	</tr>
 																	<?php foreach ($datos as $dato) {?>
 																		<tr>
-																			<td><?php echo $dato->id_pensum;?></td>
+																			<td><?php echo $dato->id_matricula;?></td>
 																			<td><?php echo $dato->id_programa;?></td>
 																			<td><?php echo $dato->nom_programa;?></td>
-																			<td><a class="glyphicon glyphicon-pencil" aria-hidden="true" href="<?php echo base_url()?>pensum/update/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo $nav;?>"></a>  <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-trash" aria-hidden="true"  onclick="if(confirmarEliminar() == false) return false" title="Eliminar Pensum" href="<?php echo base_url()?>pensum/delete/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a> <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-list-alt" aria-hidden="true" title="Detalles Pensum" href="<?php echo base_url()?>pensum/detalles/<?php echo $dato->id_pensum?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a>  </td>
+																			<td><?php echo $dato->id_estudiante;?></td>
+																			<td><?php echo $dato->nom_estudiante;?></td>
+																			<td><a class="glyphicon glyphicon-trash" aria-hidden="true"  onclick="if(confirmarEliminar() == false) return false" title="Eliminar Matricula" href="<?php echo base_url()?>matricula/delete/<?php echo $dato->id_matricula?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a> <span class="glyphicon glyphicon-option-horizontal"></span>     <a class="glyphicon glyphicon-list-alt" aria-hidden="true" title="Detalles Matricula" href="<?php echo base_url()?>matricula/detalles/<?php echo $dato->id_matricula?>/<?php echo  $folder_nav;?>/<?php echo  $nav;?>"></a> </td>
 																		</tr>
 																	<?php } ?>
 																</table> 

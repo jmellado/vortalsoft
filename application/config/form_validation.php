@@ -61,6 +61,12 @@ $config = array(
 			array('field' => 'semestre',		                'label'=> 'semestre', 		               'rules' => 'required|is_string|trim|xss_clean')
 	        ),
 
+	        'vali_Matricula'	=>	array(
+			array('field' => 'id_matricula',			            'label'=> 'id_matricula',			           'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'id_estudiante',		                'label'=> 'id_estudiante', 		               'rules' => 'required|is_string|trim|xss_clean'),
+			array('field' => 'id_programa',		                    'label'=> 'id_programa', 		               'rules' => 'required|is_string|trim|xss_clean')
+	        ),
+
 
 	     'vali_cargas'	=>	array(
 			array('field' => 'id',			            'label'=> 'id',			            'rules' => 'required|is_string|trim|xss_clean'),

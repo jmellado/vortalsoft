@@ -1,28 +1,28 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Matricula_model extends CI_Model {
+class Detalle_matricula_model extends CI_Model {
 
 	public function __construct()
 	{
 		parent::__construct();
 	}
 
-	public function insertMatricula($datos=array())
+	public function insertDetalleMatricula($datos=array())
 	{
-		$this->db->insert('matricula', $datos);
+		$this->db->insert('detalle_matricula', $datos);
 		return true;
 	}
 
-	public function getMatriculas()
+	public function getDetalleMatriculas()
 	{
 		$query=$this->db
 				->select('*')
-				->from('matricula')
+				->from('detalle_matricula')
 				->get();
 		return $query->result();
 	}
 
-	public function getMatriculasJoin()
+	public function getDetalleMatriculasJoin()
 	{
 		$query = $this->db
 		       ->select('matricula.id_matricula,matricula.id_estudiante,estudiantes.nom_estudiante,matricula.id_programa,programas.nom_programa')
@@ -34,49 +34,49 @@ class Matricula_model extends CI_Model {
 	}
 
 
-	public function getMatriculaId($id)
+	public function getDetalleMatriculaId($id)
 	{
 		$consulta=array('id_matricula'=>$id);
 		$query=$this->db
 				->select('*')
-				->from('matricula')
+				->from('detalle_matricula')
 				->where($consulta)
 				->get();
 		return $query->row();
 	}
 
 	
-	public function searchMatriculas($criterio,$valor)
+	public function searchDetalleMatriculas($criterio,$valor)
 	{
 		$consulta=array($criterio=>$valor);
 		$query=$this->db
 				->select('*')
-				->from('matricula')
+				->from('detalle_matricula')
 				->like($consulta)
 				->get();
 		return $query->result();
 	}
 
-	public function updateMatricula($datos=array(),$id)
+	public function updateDetalleMatricula($datos=array(),$id)
 	{
 		$this->db->where('id_matricula', $id);
-		$this->db->update('matricula', $datos);
+		$this->db->update('detalle_matricula', $datos);
 		return true;
 	}
 
-	public function deleteMatriculas($id)
+	public function deleteDetalleMatriculas($id)
 	{
 		$this->db->where('id_matricula', $id);
-		$this->db->delete('matricula');
+		$this->db->delete('detalle_matricula');
 		return true;
 	}
 
-	public function validarExistenciaMatriculaId($id)
+	public function validarExistenciaDetalleMatriculaId($id)
 	{
 		$consulta=array('id_matricula'=>$id);
 		$query=$this->db
 				->select('*')
-				->from('matricula')
+				->from('detalle_matricula')
 				->where($consulta)
 				->get();
 			

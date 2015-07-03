@@ -27,7 +27,7 @@
 				      	<div class="row">
 												  <div class="panel panel-default">
 													   <div class="panel-heading">
-													  	 <h1>Gestion Pensum <small>Agregar</small></h1>
+													  	 <h1>Gestion Matricula  <small>Agregar</small></h1>
 													  </div>
 												  </div>
 									  
@@ -59,17 +59,17 @@
 							
 																		</form>
                                                                             <div class="form-group">
-																		        <label class="control-label col-xs-4">Id Pensum (*):</label>
+																		        <label class="control-label col-xs-4">Id Matricula (*):</label>
 																		        <div class="col-xs-4">
-																		            <input type="text" name="id_pensum" placeholder="id pensum"class="form-control" value="<?php echo set_value("id_pensum")?>">
+																		            <input type="text" name="id_matricula" placeholder="id matricula"class="form-control" value="<?php echo set_value("id_matricula")?>">
 																		        </div>
 																		        <div class="col-xs-4">
-																		            <span class="help-block"><?php echo form_error('id_pensum'); ?></span>
+																		            <span class="help-block"><?php echo form_error('id_matricula'); ?></span>
                                                                                </div>
 																		    </div>
 
 																		      <div class="form-group">
-																		        <label class="control-label col-xs-4">Progama(*):</label>
+																		        <label class="control-label col-xs-4">Progama (*):</label>
 																		        <div class="col-xs-4">
                                                                                 
 
@@ -92,38 +92,17 @@
                                                                                </div>
 																		    </div>
 
-                                                                            <?php   for ($i=1; $i < 10; $i++)  { ?>
+																		    <div class="form-group">
+																		        <label class="control-label col-xs-4">Id Estudiante (*):</label>
+																		        <div class="col-xs-4">
+																		            <input type="text" name="id_estudiante" placeholder="id estudiante"class="form-control" value="<?php echo set_value("id_estudiante")?>">
+																		        </div>
+																		        <div class="col-xs-4">
+																		            <span class="help-block"><?php echo form_error('id_estudiante'); ?></span>
+                                                                               </div>
+																		    </div>
 
-                                                                                  <div class="panel panel-default">
-																			       <?php $semestre =$i;?>
-								                                                   <div class="panel-heading">
-																					   <large> Semestre <?php echo $semestre;?></large>  
-																				   </div>
-																			  <div class="panel-body">  
-
-							                                                                <table class="table table-hover">
-																								<tr>
-																									<th>Id</th>
-																									<th>Nombre</th>
-																									<th>Creditos</th>
-																									<th>Horas</th>
-																									<th>Agregar a Pensum</th>
-																								</tr>
-																								<?php foreach ($datos as $dato) {?>
-																									<tr>
-																										<td><?php echo $dato->id_materia;?></td>
-																										<td><?php echo $dato->nom_materia;?></td>
-																										<td><?php echo $dato->num_creditos;?></td>
-																										<td><?php echo $dato->intensidad_horaria; ?></td>
-																										<td><input type="checkbox" name="semestre<?php echo $semestre?>[]" value="<?php echo $dato->id_materia;?>"></input></td>
-																									</tr>
-																								<?php } ?>
-																							</table> 
-                                                                                </div>
-							                                         	   </div>
-
-                                                                            <?php }?>
-																		  
+																		     
 
 
 																					<div class="form-group">
